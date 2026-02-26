@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafeesat Rabiu-Adebayo | Senior Program Manager Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f2942; --secondary: #1a4a6e; --accent: #c9a227; --accent-light: #e8d48a;
+            --light: #f8f9fa; --dark: #1a1a1a; --gray: #6b7280; --white: #ffffff;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Outfit', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background-color: var(--light); color: var(--dark); line-height: 1.7; }
+        h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
+        h4 { font-family: var(--sans); font-weight: 600; }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(15, 41, 66, 0.97); padding: 1rem 0; backdrop-filter: blur(12px); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        nav .logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
+        nav .logo span { color: var(--accent); }
+        nav ul { display: flex; list-style: none; gap: 2.5rem; }
+        nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero { min-height: 100vh; background: linear-gradient(160deg, #0a1f33 0%, #0f2942 30%, #1a4a6e 70%, #1f5a80 100%); display: flex; align-items: center; padding-top: 60px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(201,162,39,0.06) 0%, transparent 70%); pointer-events: none; }
+        .hero .container { max-width: 1400px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-credentials { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .credential-badge { background: rgba(201,162,39,0.15); border: 1px solid rgba(201,162,39,0.4); color: var(--accent); padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.78rem; font-weight: 500; font-family: var(--sans); letter-spacing: 0.05em; }
+        .hero h1 { font-size: 3.8rem; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.01em; }
+        .hero h1 span { color: var(--accent); }
+        .hero-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-weight: 300; letter-spacing: 0.02em; }
+        .hero-description { color: rgba(255,255,255,0.6); font-size: 1.05rem; margin-bottom: 2rem; max-width: 540px; font-weight: 300; line-height: 1.8; }
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+        .stat-item { text-align: center; padding: 1.25rem; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s, background 0.3s; }
+        .stat-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); }
+        .stat-number { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--accent); display: block; }
+        .stat-label { color: rgba(255,255,255,0.6); font-size: 0.82rem; margin-top: 0.25rem; font-weight: 300; }
+        .hero-dashboard { background: var(--white); border-radius: 16px; padding: 1.5rem; box-shadow: 0 25px 80px rgba(0,0,0,0.3); }
+        .cta-buttons { display: flex; gap: 1rem; }
+        .btn { display: inline-flex; padding: 0.9rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 0.9rem; font-family: var(--sans); letter-spacing: 0.03em; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: var(--accent); color: var(--primary); box-shadow: 0 4px 20px rgba(201,162,39,0.3); }
+        .btn-primary:hover { box-shadow: 0 8px 30px rgba(201,162,39,0.4); }
+        .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.25); }
+        .btn-secondary:hover { border-color: rgba(255,255,255,0.5); }
+
+        /* SECTIONS */
+        section { padding: 5rem 0; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { display: inline-block; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); color: var(--primary); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 0.1em; }
+        .section-title { font-size: 2.75rem; color: var(--primary); margin-bottom: 1rem; }
+        .section-subtitle { color: var(--gray); font-size: 1.1rem; max-width: 650px; margin: 0 auto; font-weight: 300; line-height: 1.8; }
+
+        /* CASE STUDIES */
+        .case-studies { background: var(--white); }
+        .case-study { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; padding: 2.5rem; background: var(--light); border-radius: 24px; position: relative; transition: box-shadow 0.4s; }
+        .case-study:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
+        .case-study::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(180deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 24px 0 0 24px; }
+        .case-study:nth-child(even) { direction: rtl; }
+        .case-study:nth-child(even) > * { direction: ltr; }
+        .case-study-content h3 { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .case-study-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .meta-tag { background: var(--primary); color: var(--white); padding: 0.3rem 0.75rem; border-radius: 4px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.03em; }
+        .case-study-content p { color: var(--gray); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; font-weight: 300; }
+        .case-study-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
+        .metric-card { background: var(--white); padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--accent); box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s; }
+        .metric-card:hover { transform: translateY(-3px); }
+        .metric-value { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+        .metric-label { color: var(--gray); font-size: 0.82rem; font-weight: 400; }
+        .dashboard-mockup { background: var(--white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); overflow: hidden; }
+        .dashboard-header { background: var(--primary); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .dashboard-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dashboard-dot.red { background: #ff5f57; } .dashboard-dot.yellow { background: #ffbd2e; } .dashboard-dot.green { background: #28ca42; }
+        .dashboard-title { color: rgba(255,255,255,0.8); font-size: 0.82rem; margin-left: 0.5rem; font-weight: 500; letter-spacing: 0.03em; }
+        .dashboard-body { padding: 1.5rem; }
+
+        /* PUBLICATIONS */
+        .publications { background: var(--light); }
+        .pub-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 600px; margin: 0 auto; }
+        .pub-card { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+        .pub-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+        .pub-card::after { content: ''; position: absolute; bottom: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%); pointer-events: none; }
+        .pub-status { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+        .pub-status.published { background: #e8f5e9; color: #2e7d32; }
+        .pub-status.forthcoming { background: #fff3e0; color: #e65100; }
+        .pub-card h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--primary); margin-bottom: 0.5rem; line-height: 1.3; }
+        .pub-card .pub-subtitle { font-style: italic; color: var(--accent); font-size: 0.95rem; margin-bottom: 1rem; font-weight: 400; }
+        .pub-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; font-weight: 300; }
+        .pub-card .pub-meta { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #eee; font-size: 0.85rem; color: var(--gray); font-weight: 400; }
+
+        /* SKILLS */
+        .skills-section { background: linear-gradient(160deg, #0a1f33 0%, #0f2942 30%, #1a4a6e 70%, #1f5a80 100%); color: var(--white); position: relative; overflow: hidden; }
+        .skills-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
+        .skills-section .section-title { color: var(--white); }
+        .skills-section .section-subtitle { color: rgba(255,255,255,0.6); }
+        .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; }
+        .skill-category { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; transition: background 0.3s, border-color 0.3s; }
+        .skill-category:hover { background: rgba(255,255,255,0.08); border-color: rgba(201,162,39,0.3); }
+        .skill-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.4rem; }
+        .skill-category h4 { font-size: 1.05rem; margin-bottom: 1rem; color: var(--white); font-weight: 500; }
+        .skill-list { list-style: none; }
+        .skill-list li { color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 300; }
+        .skill-list li:last-child { border-bottom: none; }
+
+        /* CERTIFICATIONS */
+        .certifications { background: var(--white); }
+        .cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+        .cert-card { background: var(--light); border-radius: 16px; padding: 2rem 1.5rem; text-align: center; border: 2px solid transparent; transition: border-color 0.3s, transform 0.3s; }
+        .cert-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .cert-logo { width: 56px; height: 56px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: var(--serif); font-weight: 700; font-size: 1.1rem; color: var(--primary); }
+        .cert-name { font-weight: 600; color: var(--primary); margin-bottom: 0.25rem; font-size: 0.92rem; }
+        .cert-issuer { color: var(--gray); font-size: 0.82rem; font-weight: 300; }
+
+        /* EDUCATION */
+        .education { background: var(--light); }
+        .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .edu-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-left: 4px solid var(--accent); transition: transform 0.3s; }
+        .edu-card:hover { transform: translateY(-3px); }
+        .edu-degree { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .edu-school { color: var(--accent); font-weight: 500; margin-bottom: 0.25rem; font-size: 0.95rem; }
+        .edu-details { color: var(--gray); font-size: 0.88rem; font-weight: 300; }
+
+        /* CONTACT */
+        .contact { background: linear-gradient(160deg, #0a1f33 0%, #0f2942 30%, #1a4a6e 70%, #1f5a80 100%); color: var(--white); text-align: center; padding: 4rem 0; }
+        .contact .section-title { color: var(--white); }
+        .contact-info { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
+        .contact-item { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.75); font-weight: 300; }
+        .contact-item a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.3s; }
+        .contact-item a:hover { color: var(--accent); }
+        .contact-icon { width: 44px; height: 44px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+        footer { background: #0a1929; color: rgba(255,255,255,0.4); text-align: center; padding: 2rem; font-size: 0.85rem; font-weight: 300; }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-up { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+        .fade-up.d1 { animation-delay: 0.1s; } .fade-up.d2 { animation-delay: 0.2s; } .fade-up.d3 { animation-delay: 0.3s; } .fade-up.d4 { animation-delay: 0.4s; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 992px) { .hero .container { grid-template-columns: 1fr; text-align: center; } .hero-description { margin: 0 auto 2rem; } .cta-buttons { justify-content: center; } .hero-stats { grid-template-columns: repeat(2, 1fr); } .case-study { grid-template-columns: 1fr; } .case-study:nth-child(even) { direction: ltr; } .pub-grid { max-width: 100%; } nav ul { display: none; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .section-title { font-size: 2rem; } .skills-grid { grid-template-columns: 1fr; } .cert-grid { grid-template-columns: repeat(2, 1fr); } .education-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav><div class="container"><a href="#" class="logo">N<span>.</span>Rabiu-Adebayo</a><ul><li><a href="#about">About</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#publications">Publications</a></li><li><a href="#skills">Skills</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-credentials fade-up"><span class="credential-badge">PhD</span><span class="credential-badge">PMP&#174;</span><span class="credential-badge">PMI-ACP&#174;</span><span class="credential-badge">AWS Certified</span></div>
+                <h1 class="fade-up d1">Nafeesat <span>Rabiu-Adebayo</span></h1>
+                <p class="hero-subtitle fade-up d2">Senior Program Manager &ensp;|&ensp; Published Author &ensp;|&ensp; Development Economist</p>
+                <p class="hero-description fade-up d3">I build the systems that make complex programs work. From $16M+ portfolios and nationwide operations to published books and AI-powered content platforms, I translate strategy into execution and complexity into clarity.</p>
+                <div class="cta-buttons fade-up d4"><a href="#portfolio" class="btn btn-primary">View Portfolio</a><a href="#contact" class="btn btn-secondary">Get in Touch</a></div>
+                <div class="hero-stats fade-up d4">
+                    <div class="stat-item"><span class="stat-number">$18.6M+</span><span class="stat-label">Portfolio Value</span></div>
+                    <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">On-Time Delivery</span></div>
+                    <div class="stat-item"><span class="stat-number">50K+</span><span class="stat-label">End Users Served</span></div>
+                    <div class="stat-item"><span class="stat-number">8+</span><span class="stat-label">Years Experience</span></div>
+                </div>
+            </div>
+            <div class="hero-dashboard fade-up d3">
+                <div style="text-align:center; padding: 0.5rem 0 1rem;">
+                    <span style="display:inline-block; font-family:var(--sans); font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); background:#f0f0f0; padding:0.3rem 0.8rem; border-radius:50px;">Program Performance Dashboard &ensp; <span style="color:#28ca42;">&#9679;</span> LIVE</span>
+                </div>
+                <svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="10" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Total Budget</text><text x="10" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">$16.6M</text>
+                    <rect x="115" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="125" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Components</text><text x="125" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">3</text>
+                    <rect x="230" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="240" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Export Growth</text><text x="240" y="38" fill="#28ca42" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">+23%</text>
+                    <rect x="345" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="355" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Team Size</text><text x="355" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">15</text>
+                    <rect x="0" y="60" width="450" height="135" fill="#fafbfc" rx="4"/>
+                    <text x="15" y="82" fill="#0f2942" font-family="Outfit, Arial" font-size="10" font-weight="600">Export Performance Trend</text>
+                    <path d="M20,180 L80,165 L140,150 L200,130 L260,115 L320,95 L380,75 L430,62" fill="none" stroke="#c9a227" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M20,180 L80,165 L140,150 L200,130 L260,115 L320,95 L380,75 L430,62 L430,190 L20,190 Z" fill="url(#goldGradient)" opacity="0.15"/>
+                    <defs><linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a227"/><stop offset="100%" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs>
+                    <rect x="310" y="68" width="130" height="55" fill="white" rx="6" stroke="#eee" stroke-width="1"/>
+                    <text x="320" y="85" fill="#0f2942" font-family="Outfit, Arial" font-size="9" font-weight="600">Evaluation Status</text>
+                    <text x="320" y="100" fill="#28ca42" font-family="Outfit, Arial" font-size="8">&#9679; Completed: 3</text>
+                    <text x="320" y="112" fill="#28ca42" font-family="Outfit, Arial" font-size="8">&#9679; On Track: 100%</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-studies" id="portfolio">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Portfolio</span><h2 class="section-title">Featured Case Studies</h2><p class="section-subtitle">Delivering measurable impact through strategic program management, product ownership, and data-driven execution at scale.</p></div>
+
+            <div class="case-study">
+                <div class="case-study-content">
+                    <h3>Bilateral Trade Program Evaluation</h3>
+                    <div class="case-study-meta"><span class="meta-tag">$16.6M Budget</span><span class="meta-tag">University of East Anglia</span><span class="meta-tag">2023&#8211;2025</span></div>
+                    <p>Owned end-to-end delivery of a comprehensive evaluation of a multi-stakeholder trade facilitation initiative spanning three major components, with approximately 47% of total budget allocated to infrastructure development.</p>
+                    <p>Designed Theory of Change framework, led a 15-person cross-functional team, and applied mixed-methods analysis triangulating qualitative fieldwork (key informant interviews, document review) with quantitative trade data using augmented gravity modeling to trace implementation effectiveness across government agencies, private sector partners, and end-user communities.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Components Evaluated</div></div>
+                        <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">On-Time Completion</div></div>
+                        <div class="metric-card"><div class="metric-value">+23%</div><div class="metric-label">Export Growth</div></div>
+                        <div class="metric-card"><div class="metric-value">12</div><div class="metric-label">KPI Dashboards</div></div>
+                    </div>
+                </div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Export Performance Dashboard</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="10" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Budget</text><text x="10" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">$16.6M</text><rect x="115" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="125" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Infrastructure</text><text x="125" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">47%</text><rect x="230" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="240" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Stakeholders</text><text x="240" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">15+</text><rect x="345" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="355" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Components</text><text x="355" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">3</text><rect x="0" y="60" width="450" height="135" fill="#fafbfc" rx="4"/><path d="M20,180 L80,160 L140,145 L200,120 L260,105 L320,90 L380,70 L430,60" fill="none" stroke="#c9a227" stroke-width="3"/></svg></div></div></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-content">
+                    <h3>Digital AgriTech Platform</h3>
+                    <div class="case-study-meta"><span class="meta-tag">Product Owner</span><span class="meta-tag">OCP Africa &amp; IBM</span><span class="meta-tag">2018&#8211;2019</span></div>
+                    <p>Owned product lifecycle as Product Owner for a digital agriculture platform developed in partnership with IBM, bridging deep agricultural domain expertise with technical development. Managed prioritized backlog, led bi-weekly sprint planning with engineering teams, and participated in every prototype testing session to ensure user-centric design.</p>
+                    <p>Brokered strategic partnerships mobilizing $2M+ in investment by building alignment between Fortune 500 partners, government agencies, and end-user cooperatives through structured governance forums.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric-card"><div class="metric-value">$2M+</div><div class="metric-label">Investment Mobilized</div></div>
+                        <div class="metric-card"><div class="metric-value">+25%</div><div class="metric-label">Platform Adoption</div></div>
+                        <div class="metric-card"><div class="metric-value">+30%</div><div class="metric-label">End-User Income Growth</div></div>
+                        <div class="metric-card"><div class="metric-value">500+</div><div class="metric-label">Users Trained</div></div>
+                    </div>
+                </div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">AgriTech Platform Analytics</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="220" height="100" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">User Adoption by Region</text><rect x="25" y="35" width="30" height="55" fill="#1a4a6e" rx="3"/><rect x="65" y="45" width="30" height="45" fill="#1a4a6e" rx="3"/><rect x="105" y="40" width="30" height="50" fill="#c9a227" rx="3"/><rect x="145" y="50" width="30" height="40" fill="#1a4a6e" rx="3"/><rect x="185" y="55" width="30" height="35" fill="#1a4a6e" rx="3"/><rect x="230" y="0" width="220" height="100" fill="#f8f9fa" rx="8"/><text x="245" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">KPI Achievement</text><circle cx="340" cy="60" r="30" fill="none" stroke="#e5e7eb" stroke-width="8"/><circle cx="340" cy="60" r="30" fill="none" stroke="#c9a227" stroke-width="8" stroke-dasharray="188" stroke-dashoffset="0" transform="rotate(-90 340 60)"/><text x="340" y="65" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="12" font-weight="bold" text-anchor="middle">15/15</text><rect x="0" y="110" width="450" height="85" fill="#f8f9fa" rx="8"/><text x="15" y="132" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Efficiency Gains</text><rect x="25" y="145" width="180" height="20" fill="#e8f5e9" rx="4"/><text x="35" y="159" fill="#28ca42" font-family="Outfit, Arial" font-size="11" font-weight="bold">Manual Process: -40%</text><rect x="240" y="145" width="180" height="20" fill="#fff8e1" rx="4"/><text x="250" y="159" fill="#c9a227" font-family="Outfit, Arial" font-size="11" font-weight="bold">Income Growth: +30%</text></svg></div></div></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-content">
+                    <h3>National Logistics and Operations Program</h3>
+                    <div class="case-study-meta"><span class="meta-tag">20 Locations</span><span class="meta-tag">TAK Logistics</span><span class="meta-tag">2016&#8211;2018</span></div>
+                    <p>Coordinated nationwide distribution operations across 20 locations serving 50,000+ end users, with full ownership of budget, execution timelines, and delivery outcomes within government constraints.</p>
+                    <p>Supervised a 10-person operations team monitoring real-time GPS tracking of distribution vehicles nationwide. Built inter-agency partnerships across government agencies and private distributors, creating escalation pathways and conflict-resolution mechanisms to keep programs on track.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric-card"><div class="metric-value">50K+</div><div class="metric-label">End Users Served</div></div>
+                        <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Coverage Achieved</div></div>
+                        <div class="metric-card"><div class="metric-value">-20%</div><div class="metric-label">Distribution Leakage</div></div>
+                        <div class="metric-card"><div class="metric-value">+35%</div><div class="metric-label">Targeting Accuracy</div></div>
+                    </div>
+                </div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Operations Control Center</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="260" height="130" fill="#e8f4f8" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Live Fleet Tracking</text><path d="M50,40 L80,35 L130,40 L180,35 L220,45 L230,70 L225,100 L200,115 L150,113 L100,110 L60,95 L45,70 L50,50 Z" fill="#d4e6ed" stroke="#1a4a6e" stroke-width="2"/><circle cx="100" cy="60" r="5" fill="#28ca42"/><circle cx="150" cy="75" r="5" fill="#28ca42"/><circle cx="180" cy="65" r="5" fill="#c9a227"/><circle cx="130" cy="90" r="5" fill="#28ca42"/><rect x="270" y="0" width="180" height="130" fill="#f8f9fa" rx="8"/><text x="285" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Real-Time Status</text><rect x="285" y="35" width="150" height="28" fill="#f0fdf4" rx="4"/><text x="295" y="54" fill="#28ca42" font-family="Outfit, Arial" font-size="11" font-weight="bold">Deliveries: 234</text><rect x="285" y="70" width="150" height="28" fill="#fff8e1" rx="4"/><text x="295" y="89" fill="#c9a227" font-family="Outfit, Arial" font-size="11" font-weight="bold">En Route: 47</text><rect x="285" y="105" width="150" height="20" fill="white" rx="4" stroke="#e5e7eb"/><text x="295" y="119" fill="#0f2942" font-family="Outfit, Arial" font-size="10">Locations: 20/20 &#10003;</text><rect x="0" y="140" width="450" height="55" fill="#f8f9fa" rx="8"/><text x="15" y="162" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Performance</text><text x="15" y="182" fill="#6b7280" font-family="Outfit, Arial" font-size="9">On Time: 96%</text><rect x="90" y="173" width="100" height="10" fill="#e5e7eb" rx="5"/><rect x="90" y="173" width="96" height="10" fill="#28ca42" rx="5"/><text x="240" y="182" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Accuracy: 90%</text><rect x="320" y="173" width="100" height="10" fill="#e5e7eb" rx="5"/><rect x="320" y="173" width="90" height="10" fill="#c9a227" rx="5"/></svg></div></div></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-content">
+                    <h3>Multi-City Urban Infrastructure Analysis</h3>
+                    <div class="case-study-meta"><span class="meta-tag">7 African Cities</span><span class="meta-tag">University of Manchester</span><span class="meta-tag">Research Collaboration</span></div>
+                    <p>Collaborated on a comprehensive analysis of urban planning documents across seven African cities: Cairo, Kampala, Lilongwe, Maputo, Mogadishu, Freetown, and Lagos. The project assessed which planning considerations had been properly addressed and which had been overlooked.</p>
+                    <p>Developed analytical frameworks connecting historical planning decisions to current urban conditions, producing insights applicable to emerging city development initiatives.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric-card"><div class="metric-value">7</div><div class="metric-label">Cities Analyzed</div></div>
+                        <div class="metric-card"><div class="metric-value">50+</div><div class="metric-label">Documents Reviewed</div></div>
+                        <div class="metric-card"><div class="metric-value">12</div><div class="metric-label">Key Indicators</div></div>
+                        <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Research Outputs</div></div>
+                    </div>
+                </div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Urban Planning Analysis</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="450" height="95" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Planning Standards Compliance by City</text><text x="60" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Cairo</text><text x="105" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Kampala</text><text x="155" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Lilongwe</text><text x="210" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Maputo</text><text x="260" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Mogadishu</text><text x="320" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Freetown</text><text x="380" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Lagos</text><rect x="55" y="48" width="30" height="14" fill="#28ca42" rx="2"/><rect x="100" y="48" width="30" height="14" fill="#7dd87d" rx="2"/><rect x="150" y="48" width="30" height="14" fill="#28ca42" rx="2"/><rect x="205" y="48" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="260" y="48" width="30" height="14" fill="#ff6b6b" rx="2"/><rect x="315" y="48" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="375" y="48" width="30" height="14" fill="#28ca42" rx="2"/><rect x="55" y="66" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="100" y="66" width="30" height="14" fill="#ff6b6b" rx="2"/><rect x="150" y="66" width="30" height="14" fill="#7dd87d" rx="2"/><rect x="205" y="66" width="30" height="14" fill="#28ca42" rx="2"/><rect x="260" y="66" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="315" y="66" width="30" height="14" fill="#7dd87d" rx="2"/><rect x="375" y="66" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="0" y="105" width="450" height="90" fill="#f8f9fa" rx="8"/><text x="15" y="127" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Gap Analysis by Category</text><text x="90" y="150" fill="#6b7280" font-family="Outfit, Arial" font-size="9" text-anchor="end">Infrastructure</text><rect x="100" y="140" width="200" height="14" fill="#e5e7eb" rx="3"/><rect x="100" y="140" width="170" height="14" fill="#28ca42" rx="3"/><text x="310" y="151" fill="#6b7280" font-family="Outfit, Arial" font-size="9">85%</text><text x="90" y="175" fill="#6b7280" font-family="Outfit, Arial" font-size="9" text-anchor="end">Environment</text><rect x="100" y="165" width="200" height="14" fill="#e5e7eb" rx="3"/><rect x="100" y="165" width="140" height="14" fill="#c9a227" rx="3"/><text x="310" y="176" fill="#6b7280" font-family="Outfit, Arial" font-size="9">70%</text></svg></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="publications" id="publications">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Published Work</span><h2 class="section-title">Publications</h2><p class="section-subtitle">Translating complexity into clarity across economics, culture, and institutional analysis.</p></div>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <span class="pub-status published">Published 2025</span>
+                    <h3>The Precious Pearl</h3>
+                    <div class="pub-subtitle">Aphorisms of Ancient Arab Wisdom &middot; With Commentary</div>
+                    <p>A translated and annotated collection of over 300 classical Arabic aphorisms originally compiled by Sheikh Muhammad Rabiu Adebayo. This work preserves a family scholarly legacy while making centuries-old wisdom on character, knowledge, patience, and governance accessible to contemporary English-language readers.</p>
+                    <div class="pub-meta">Translator and Annotator &ensp;|&ensp; Available on Amazon Kindle &ensp;|&ensp; 350+ pages</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Expertise</span><h2 class="section-title">Technical Competencies</h2><p class="section-subtitle">A comprehensive toolkit for delivering complex programs at scale.</p></div>
+            <div class="skills-grid">
+                <div class="skill-category"><div class="skill-icon">&#128203;</div><h4>Program Management</h4><ul class="skill-list"><li>Portfolio Management</li><li>Agile / Scrum / SAFe</li><li>Risk &amp; Dependency Management</li><li>Budget Ownership</li><li>Strategic Planning</li><li>M&amp;E Frameworks</li></ul></div>
+                <div class="skill-category"><div class="skill-icon">&#128736;&#65039;</div><h4>Project Tools</h4><ul class="skill-list"><li>JIRA &amp; Confluence</li><li>Asana</li><li>Smartsheet</li><li>MS Project</li><li>Trello</li></ul></div>
+                <div class="skill-category"><div class="skill-icon">&#128202;</div><h4>Data &amp; Analytics</h4><ul class="skill-list"><li>Power BI &amp; Tableau</li><li>SQL</li><li>Excel (Advanced)</li><li>Python &amp; Stata</li><li>NVivo</li><li>Dashboard Design</li></ul></div>
+                <div class="skill-category"><div class="skill-icon">&#9729;&#65039;</div><h4>Cloud &amp; AI</h4><ul class="skill-list"><li>AWS (EC2, S3, Lambda)</li><li>Generative AI Tools</li><li>Prompt Engineering</li><li>AI Content Workflows</li><li>Process Automation</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Credentials</span><h2 class="section-title">Professional Certifications</h2><p class="section-subtitle">Industry-recognized credentials validating expertise across program management, cloud, and strategy.</p></div>
+            <div class="cert-grid">
+                <div class="cert-card"><div class="cert-logo">PMP</div><div class="cert-name">PMP&#174;</div><div class="cert-issuer">Project Management Institute</div></div>
+                <div class="cert-card"><div class="cert-logo">ACP</div><div class="cert-name">PMI-ACP&#174;</div><div class="cert-issuer">Project Management Institute</div></div>
+                <div class="cert-card"><div class="cert-logo">AWS</div><div class="cert-name">Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div></div>
+                <div class="cert-card"><div class="cert-logo">AI</div><div class="cert-name">Gen AI for PM</div><div class="cert-issuer">Project Management Institute</div></div>
+                <div class="cert-card"><div class="cert-logo">W</div><div class="cert-name">Strategic Management</div><div class="cert-issuer">Wharton Business School</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Academic Background</span><h2 class="section-title">Education</h2><p class="section-subtitle">A foundation of rigorous academic training across four degrees and three countries.</p></div>
+            <div class="education-grid">
+                <div class="edu-card"><div class="edu-degree">PhD, Development Economics</div><div class="edu-school">University of East Anglia</div><div class="edu-details">United Kingdom | 2025</div></div>
+                <div class="edu-card"><div class="edu-degree">MA, Global Affairs &amp; Human Security</div><div class="edu-school">University of Baltimore</div><div class="edu-details">USA | GPA: 3.97/4.0</div></div>
+                <div class="edu-card"><div class="edu-degree">MSc, Agricultural Extension</div><div class="edu-school">University of Ilorin</div><div class="edu-details">Nigeria | Distinction</div></div>
+                <div class="edu-card"><div class="edu-degree">BSc, Agriculture (Honours)</div><div class="edu-school">University of Ilorin</div><div class="edu-details">Nigeria</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header"><span class="section-label" style="background: rgba(255,255,255,0.15); color: white;">Get in Touch</span><h2 class="section-title">Let's Connect</h2><p class="section-subtitle" style="color: rgba(255,255,255,0.6);">Open to program management, strategy, and operations opportunities in technology, international development, and innovation.</p></div>
+            <div class="contact-info">
+                <div class="contact-item"><div class="contact-icon">&#9993;&#65039;</div><a href="mailto:nafeezie@gmail.com">nafeezie@gmail.com</a></div>
+                <div class="contact-item"><div class="contact-icon">&#128241;</div><span>+1 702-573-0977</span></div>
+                <div class="contact-item"><div class="contact-icon">&#128188;</div><a href="https://linkedin.com/in/nafeesat-rabiu-adebayo-phd" target="_blank">LinkedIn</a></div>
+                <div class="contact-item"><div class="contact-icon">&#128205;</div><span>Henderson, Nevada, USA</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>&copy; 2025 Nafeesat Rabiu-Adebayo. All rights reserved.</p></footer>
+
+    <script>
+        document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        // Scroll-triggered fade-in for case studies and publication cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.case-study, .pub-card, .skill-category, .cert-card, .edu-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
