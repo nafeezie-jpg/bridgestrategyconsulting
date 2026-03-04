@@ -73,7 +73,7 @@
 
   .work-section { padding: 8rem 4rem; max-width: 1200px; margin: 0 auto; }
   .work-header { text-align: center; margin-bottom: 5rem; }
-  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; background: var(--border); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; background: var(--border); }
   .work-card { background: var(--warm); padding: 3.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
   .work-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.4s ease; }
   .work-card:hover::before { height: 100%; }
@@ -190,10 +190,6 @@
       <div class="credential-number">$16.6M</div>
       <div class="credential-label">Program Evaluated</div>
     </div>
-    <div class="credential-item">
-      <div class="credential-number">22+</div>
-      <div class="credential-label">Countries Reached</div>
-    </div>
   </div>
 
   <div class="scroll-indicator">
@@ -221,7 +217,7 @@
     </div>
     <div class="stat-item">
       <div class="stat-number">30K+</div>
-      <div class="stat-desc">Views on a global public education platform spanning 22+ countries</div>
+      <div class="stat-desc">Views on a global public education platform</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">6</div>
@@ -243,36 +239,26 @@
         <h2 class="section-title">Services Built for<br>the Space Between</h2>
       </div>
     </div>
-    <div class="services-grid reveal">
-      <div class="service-card">
+    <div class="services-grid reveal" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="service-card" style="border-bottom: 1px solid rgba(184,146,74,0.2);">
         <div class="service-number">01</div>
-        <h3 class="service-name">Program &amp; Project Management</h3>
-        <p class="service-desc">End-to-end ownership of programs and projects from inception to delivery. Strategic planning, operating model design, risk management, stakeholder coordination, and the kind of meticulous execution that thrives in ambiguity, gets things done on time, within scope, and beyond expectation.</p>
+        <h3 class="service-name">Program Strategy, Management &amp; Evaluation</h3>
+        <p class="service-desc">End-to-end ownership of programs from design through delivery and evaluation. Strategic planning, operating model design, risk management, stakeholder coordination, Theory of Change development, and the kind of honest analysis that actually reshapes decisions. Built for complex, multi-stakeholder environments where ambiguity is the norm and meticulous execution is the difference.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" style="border-bottom: 1px solid rgba(184,146,74,0.2);">
         <div class="service-number">02</div>
-        <h3 class="service-name">Program Strategy &amp; Evaluation</h3>
-        <p class="service-desc">End-to-end design, management, and evaluation of multi-stakeholder programs. From Theory of Change to final readout, with the kind of honest analysis that actually reshapes decisions.</p>
+        <h3 class="service-name">Research &amp; Impact Analysis</h3>
+        <p class="service-desc">Original research using mixed methods, econometric modeling, and qualitative fieldwork. Built for donors, governments, and foundations who need independent thinking, not recycled literature. Findings translated into clear narratives that move people to act, not just to read.</p>
       </div>
       <div class="service-card">
         <div class="service-number">03</div>
-        <h3 class="service-name">Research &amp; Impact Analysis</h3>
-        <p class="service-desc">Original research using mixed methods, econometric modeling, and qualitative fieldwork. Built for donors, governments, and foundations who need independent thinking, not recycled literature.</p>
+        <h3 class="service-name">Context-Driven Program Design</h3>
+        <p class="service-desc">Programs designed for the actual conditions on the ground, not the conditions in the proposal document. Grounded in years of field-level work across West Africa, international institutions, and government systems where plans succeed or fail based on whether someone understood the local dynamics before writing the first line.</p>
       </div>
       <div class="service-card">
         <div class="service-number">04</div>
-        <h3 class="service-name">Cross-Cultural Program Design</h3>
-        <p class="service-desc">Strategies that survive contact with the communities they are designed for. Grounded in years of on-the-ground work across West Africa, international institutions, and global development programs.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">05</div>
-        <h3 class="service-name">Capacity Building &amp; Training</h3>
-        <p class="service-desc">Raising the analytical and delivery standards of teams through hands-on training in research methodologies, evidence-based decision making, and program execution frameworks.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">06</div>
-        <h3 class="service-name">Strategic Communications</h3>
-        <p class="service-desc">Translating dense institutional work into narratives that move people. Nafeesat is a published writer whose essays on development, culture, and systems have reached global audiences on Medium and beyond. For organizations that need their rigorous work to be understood, believed, and acted upon.</p>
+        <h3 class="service-name">Technology &amp; Product Strategy</h3>
+        <p class="service-desc">Translating institutional needs into digital products that work for end users. From stakeholder research and design thinking to agile product development, prototype testing, and platform launch. For organizations building technology that must serve people who were never in the room when it was designed.</p>
       </div>
     </div>
   </div>
@@ -285,9 +271,24 @@
   </div>
   <div class="work-grid reveal">
     <div class="work-card">
-      <p class="work-tag">Product Ownership &middot; AgriTech &middot; Input Subsidy</p>
-      <h3 class="work-title">OCP Africa Digital Platform &amp; Agribooster Program</h3>
-      <p class="work-desc">Two workstreams, one role. On the AgriTech side, progressed from Business Analyst to Product Owner on a digital agriculture platform built with IBM. Conducted stakeholder interviews across the full agricultural value chain, participated in design thinking workshops, guided the prototype through daily agile ceremonies, and presented the working product to senior government executives. On the Agribooster side, supported a bundled input program delivering subsidized seeds, fertilizers, and insecticides to thousands of smallholder farmers through one-stop shops across 5+ states in northern Nigeria.</p>
+      <p class="work-tag">Product Ownership &middot; AgriTech</p>
+      <h3 class="work-title">Digital Agriculture Platform for Africa</h3>
+      <p class="work-desc">Progressed from Business Analyst to Product Owner on an end-to-end digital agriculture platform built with IBM for OCP Africa. Conducted stakeholder interviews across the full value chain, participated in design thinking workshops, guided prototype development through daily agile ceremonies with the technical team, and presented the working product to senior government executives. The platform spanned five domains: farm inputs, market access, financial services, agronomic advice, and farm management.</p>
+      <div class="work-outcomes">
+        <div class="outcome">
+          <span class="outcome-value">5</span>
+          <span class="outcome-label">Platform Domains</span>
+        </div>
+        <div class="outcome">
+          <span class="outcome-value">OCP + IBM</span>
+          <span class="outcome-label">Cross-Org Team</span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <p class="work-tag">Business Analysis &middot; Input Subsidy</p>
+      <h3 class="work-title">Agribooster Bundled Input Program</h3>
+      <p class="work-desc">Supported OCP Africa's Agribooster initiative, which bundled seeds, fertilizers, and insecticides into single subsidized packages for smallholder farmers, delivered through one-stop shops staffed with extension agents across northern Nigeria. Handled the corporate side while field analysts worked directly with farmers, and travelled across the region leading stakeholder engagement with state ministries, cooperatives, and input suppliers.</p>
       <div class="work-outcomes">
         <div class="outcome">
           <span class="outcome-value">1000s</span>
@@ -309,7 +310,7 @@
           <span class="outcome-label">Team Supervised</span>
         </div>
         <div class="outcome">
-          <span class="outcome-value">Live</span>
+          <span class="outcome-value">Supervised</span>
           <span class="outcome-label">GPS Control Room</span>
         </div>
         <div class="outcome">
@@ -322,6 +323,20 @@
       <p class="work-tag">PhD Research &middot; University of East Anglia &middot; 2025</p>
       <h3 class="work-title">The Aid-for-Trade Paradox</h3>
       <p class="work-desc">Doctoral research that named and evidenced a paradox at the heart of global aid policy. Independently evaluated a $16.6 million bilateral trade initiative, building an original dataset from scratch, combining a process evaluation grounded in Theory of Change with econometric modeling, trade cost analysis, and export performance analysis. Qualitative fieldwork drew on 15 respondents across Nigeria. The research revealed that aid simultaneously increases trade costs and improves export performance, with direct implications for how billions in development finance are structured and deployed.</p>
+      <div class="work-outcomes">
+        <div class="outcome">
+          <span class="outcome-value" style="font-size:1.1rem;">Productive Capacity</span>
+          <span class="outcome-label">Component 1</span>
+        </div>
+        <div class="outcome">
+          <span class="outcome-value" style="font-size:1.1rem;">Economic Infrastructure</span>
+          <span class="outcome-label">Component 2</span>
+        </div>
+        <div class="outcome">
+          <span class="outcome-value" style="font-size:1.1rem;">Trade Policies &amp; Regulations</span>
+          <span class="outcome-label">Component 3</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -337,7 +352,7 @@
       <div class="insight-card">
         <p class="insight-type">YouTube &middot; Global Platform</p>
         <h3 class="insight-title">Small Things, Big Meaning</h3>
-        <p class="insight-desc">A global public education platform with 30,000+ views across 22+ countries, translating economic systems and cultural patterns through AI-enabled production. Original content on the logic behind the world we live in. <a href="https://www.youtube.com/@smallthingsbigmeaning" target="_blank" style="color:var(--gold); text-decoration:none;">Watch on YouTube</a>.</p>
+        <p class="insight-desc">A global public education platform with 30,000+ views, translating economic systems and cultural patterns through AI-enabled production. Original content on the logic behind the world we live in. <a href="https://www.youtube.com/@smallthingsbigmeaning" target="_blank" style="color:var(--gold); text-decoration:none;">Watch on YouTube</a>.</p>
       </div>
       <div class="insight-card">
         <p class="insight-type">Book &middot; Published 2026</p>
