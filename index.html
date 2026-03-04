@@ -20,779 +20,125 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* NAVIGATION */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    padding: 1.5rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(245,240,232,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .nav-logo span {
-    color: var(--gold);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(245,240,232,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10rem 4rem 6rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 55%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent 30%, rgba(184,146,74,0.06) 100%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
-    animation: fadeUp 0.8s 0.2s both;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    max-width: 820px;
-    margin-bottom: 2rem;
-    animation: fadeUp 0.8s 0.4s both;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    max-width: 480px;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-    font-weight: 300;
-    animation: fadeUp 0.8s 0.6s both;
-  }
-
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: var(--ink);
-    color: var(--cream);
-    padding: 1rem 2.2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    animation: fadeUp 0.8s 0.8s both;
-  }
-
-  .hero-cta:hover {
-    background: var(--gold);
-    gap: 1.2rem;
-  }
-
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 6rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 55%; height: 100%; background: linear-gradient(135deg, transparent 30%, rgba(184,146,74,0.06) 100%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; animation: fadeUp 0.8s 0.2s both; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.1; max-width: 820px; margin-bottom: 2rem; animation: fadeUp 0.8s 0.4s both; }
+  .hero-title em { font-style: italic; color: var(--gold); }
+  .hero-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 480px; line-height: 1.8; margin-bottom: 3rem; font-weight: 300; animation: fadeUp 0.8s 0.6s both; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 0.8rem; background: var(--ink); color: var(--cream); padding: 1rem 2.2rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; animation: fadeUp 0.8s 0.8s both; }
+  .hero-cta:hover { background: var(--gold); gap: 1.2rem; }
   .hero-cta svg { transition: transform 0.3s; }
   .hero-cta:hover svg { transform: translateX(4px); }
+  .hero-credentials { position: absolute; right: 4rem; bottom: 6rem; display: flex; flex-direction: column; gap: 1.2rem; animation: fadeIn 1s 1.2s both; }
+  .credential-item { text-align: right; }
+  .credential-number { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold); line-height: 1; }
+  .credential-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
 
-  .hero-credentials {
-    position: absolute;
-    right: 4rem;
-    bottom: 6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    animation: fadeIn 1s 1.2s both;
-  }
+  .section-divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 3rem; }
 
-  .credential-item {
-    text-align: right;
-  }
+  .about { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .about-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .about-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; margin-bottom: 2rem; }
+  .about-body { color: var(--text-muted); font-weight: 300; line-height: 1.9; margin-bottom: 1.5rem; }
+  .about-body strong { color: var(--ink); font-weight: 500; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem; background: var(--warm); border: 1px solid var(--border); }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+  .stat-desc { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--text-muted); line-height: 1.5; }
 
-  .credential-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 300;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .credential-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  /* DIVIDER */
-  .section-divider {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 3rem;
-  }
-
-  /* ABOUT */
-  .about {
-    padding: 8rem 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8rem;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .about-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-
-  .about-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-  }
-
-  .about-body {
-    color: var(--text-muted);
-    font-weight: 300;
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-body strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 3rem;
-    background: var(--warm);
-    border: 1px solid var(--border);
-  }
-
-  .stat-item {}
-
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 300;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-
-  .stat-desc {
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* SERVICES */
-  .services-section {
-    background: var(--ink);
-    padding: 8rem 4rem;
-  }
-
-  .services-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .services-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-bottom: 5rem;
-  }
-
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--cream);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid rgba(184,146,74,0.2);
-  }
-
-  .service-card {
-    padding: 3rem 2.5rem;
-    border-right: 1px solid rgba(184,146,74,0.2);
-    border-bottom: 1px solid rgba(184,146,74,0.2);
-    transition: background 0.3s;
-    cursor: default;
-  }
-
+  .services-section { background: var(--ink); padding: 8rem 4rem; }
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+  .services-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 5rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--cream); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(184,146,74,0.2); }
+  .service-card { padding: 3rem 2.5rem; border-right: 1px solid rgba(184,146,74,0.2); border-bottom: 1px solid rgba(184,146,74,0.2); transition: background 0.3s; cursor: default; }
   .service-card:nth-child(3n) { border-right: none; }
   .service-card:nth-child(4), .service-card:nth-child(5), .service-card:nth-child(6) { border-bottom: none; }
+  .service-card:hover { background: rgba(184,146,74,0.06); }
+  .service-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(184,146,74,0.25); line-height: 1; margin-bottom: 1.5rem; }
+  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--cream); margin-bottom: 1rem; line-height: 1.3; }
+  .service-desc { font-size: 0.82rem; color: rgba(245,240,232,0.55); line-height: 1.8; font-weight: 300; }
 
-  .service-card:hover {
-    background: rgba(184,146,74,0.06);
-  }
-
-  .service-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    font-weight: 300;
-    color: rgba(184,146,74,0.25);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-weight: 400;
-    color: var(--cream);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-
-  .service-desc {
-    font-size: 0.82rem;
-    color: rgba(245,240,232,0.55);
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  /* THE WORK */
-  .work-section {
-    padding: 8rem 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .work-header {
-    text-align: center;
-    margin-bottom: 5rem;
-  }
-
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
-    background: var(--border);
-  }
-
-  .work-card {
-    background: var(--warm);
-    padding: 3.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .work-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--gold);
-    transition: height 0.4s ease;
-  }
-
+  .work-section { padding: 8rem 4rem; max-width: 1200px; margin: 0 auto; }
+  .work-header { text-align: center; margin-bottom: 5rem; }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; background: var(--border); }
+  .work-card { background: var(--warm); padding: 3.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .work-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.4s ease; }
   .work-card:hover::before { height: 100%; }
-
   .work-card:hover { background: #fff; }
+  .work-tag { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .work-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.25; margin-bottom: 1rem; }
+  .work-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 2rem; }
+  .work-outcomes { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .outcome { display: flex; flex-direction: column; }
+  .outcome-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--gold); line-height: 1; }
+  .outcome-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.2rem; }
 
-  .work-tag {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.2rem;
-  }
+  .insights-section { background: var(--warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 8rem 4rem; }
+  .insights-inner { max-width: 1200px; margin: 0 auto; }
+  .insights-header { text-align: center; margin-bottom: 4rem; }
+  .insights-subtitle { font-size: 0.9rem; color: var(--text-muted); font-weight: 300; max-width: 500px; margin: 1rem auto 0; }
+  .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .insight-card { background: var(--cream); border: 1px solid var(--border); padding: 2.5rem; transition: all 0.3s; }
+  .insight-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .insight-type { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .insight-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.8rem; }
+  .insight-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
 
-  .work-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 1rem;
-  }
+  .philosophy { padding: 7rem 4rem; text-align: center; position: relative; overflow: hidden; }
+  .philosophy::before { content: '\201C'; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%); font-family: 'Cormorant Garamond', serif; font-size: 20rem; color: rgba(184,146,74,0.06); line-height: 1; pointer-events: none; }
+  .philosophy-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 300; font-style: italic; max-width: 800px; margin: 0 auto 2rem; line-height: 1.5; position: relative; }
+  .philosophy-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
 
-  .work-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    font-weight: 300;
-    margin-bottom: 2rem;
-  }
+  .contact-section { background: var(--ink); padding: 8rem 4rem; }
+  .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .contact-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .contact-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 1.5rem; }
+  .contact-body { font-size: 0.9rem; color: rgba(245,240,232,0.6); font-weight: 300; line-height: 1.8; margin-bottom: 3rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+  .contact-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--cream); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; padding: 0.8rem 1.8rem; border: 1px solid rgba(245,240,232,0.2); transition: all 0.3s; }
+  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+  .contact-link.primary { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .contact-link.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--ink); }
 
-  .work-outcomes {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .outcome {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .outcome-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .outcome-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 0.2rem;
-  }
-
-  /* INSIGHTS */
-  .insights-section {
-    background: var(--warm);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 8rem 4rem;
-  }
-
-  .insights-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .insights-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .insights-subtitle {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    max-width: 500px;
-    margin: 1rem auto 0;
-  }
-
-  .insights-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .insight-card {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    transition: all 0.3s;
-  }
-
-  .insight-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-4px);
-  }
-
-  .insight-type {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-
-  .insight-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: 1.35;
-    margin-bottom: 0.8rem;
-  }
-
-  .insight-desc {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* PHILOSOPHY BAND */
-  .philosophy {
-    padding: 7rem 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .philosophy::before {
-    content: '"';
-    position: absolute;
-    top: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20rem;
-    color: rgba(184,146,74,0.06);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .philosophy-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
-    font-weight: 300;
-    font-style: italic;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    line-height: 1.5;
-    position: relative;
-  }
-
-  .philosophy-attribution {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* CONTACT */
-  .contact-section {
-    background: var(--ink);
-    padding: 8rem 4rem;
-  }
-
-  .contact-inner {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .contact-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-
-  .contact-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  .contact-body {
-    font-size: 0.9rem;
-    color: rgba(245,240,232,0.6);
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-  }
-
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    padding: 0.8rem 1.8rem;
-    border: 1px solid rgba(245,240,232,0.2);
-    transition: all 0.3s;
-  }
-
-  .contact-link:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
-
-  .contact-link.primary {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--ink);
-  }
-
-  .contact-link.primary:hover {
-    background: var(--gold-light);
-    border-color: var(--gold-light);
-    color: var(--ink);
-  }
-
-  /* FOOTER */
-  footer {
-    background: #0f0d0b;
-    padding: 3rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(184,146,74,0.1);
-  }
-
-  .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    color: rgba(245,240,232,0.4);
-    letter-spacing: 0.08em;
-  }
-
+  footer { background: #0f0d0b; padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(184,146,74,0.1); }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: rgba(245,240,232,0.4); letter-spacing: 0.08em; }
   .footer-brand span { color: var(--gold); }
+  .footer-copy { font-size: 0.72rem; color: rgba(245,240,232,0.25); letter-spacing: 0.08em; }
 
-  .footer-copy {
-    font-size: 0.72rem;
-    color: rgba(245,240,232,0.25);
-    letter-spacing: 0.08em;
-  }
+  .credentials-section { padding: 8rem 4rem; background: var(--cream); }
+  .credentials-inner { max-width: 1200px; margin: 0 auto; }
+  .credentials-header { margin-bottom: 5rem; }
+  .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem 6rem; }
+  .cred-heading { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
+  .cred-item { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(184,146,74,0.08); }
+  .cred-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .cred-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .cred-org { font-size: 0.75rem; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.4rem; }
+  .cred-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .reveal { animation: fadeUp 0.7s both; }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+  .scroll-indicator { position: absolute; bottom: 3rem; left: 4rem; display: flex; align-items: center; gap: 1rem; animation: fadeIn 1s 1.5s both; }
+  .scroll-line { width: 40px; height: 1px; background: var(--gold); position: relative; overflow: hidden; }
+  .scroll-line::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--cream); animation: scrollAnim 2s 2s infinite; }
+  @keyframes scrollAnim { to { left: 100%; } }
+  .scroll-text { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 
-  .reveal {
-    animation: fadeUp 0.7s both;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* DECORATIVE LINE */
-  .ornament {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .ornament-line {
-    flex: 1;
-    max-width: 40px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  /* SCROLL INDICATOR */
-  .scroll-indicator {
-    position: absolute;
-    bottom: 3rem;
-    left: 4rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    animation: fadeIn 1s 1.5s both;
-  }
-
-  .scroll-line {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .scroll-line::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--cream);
-    animation: scrollAnim 2s 2s infinite;
-  }
-
-  @keyframes scrollAnim {
-    to { left: 100%; }
-  }
-
-  .scroll-text {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  /* CREDENTIALS */
-  .credentials-section {
-    padding: 8rem 4rem;
-    background: var(--cream);
-  }
-
-  .credentials-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .credentials-header {
-    margin-bottom: 5rem;
-  }
-
-  .credentials-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem 6rem;
-  }
-
-  .cred-block {}
-
-  .cred-heading {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .cred-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(184,146,74,0.08);
-  }
-
-  .cred-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .cred-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.2rem;
-  }
-
-  .cred-org {
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    color: var(--gold);
-    margin-bottom: 0.4rem;
-  }
-
-  .cred-desc {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
@@ -816,7 +162,6 @@
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
   <a href="#" class="nav-logo">Bridge Strategy <span>Consulting</span></a>
   <ul class="nav-links">
@@ -829,11 +174,10 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">Nafeesat Rabiu-Adebayo &nbsp;·&nbsp; PhD &middot; PMP &middot; PMI-ACP &middot; AWS Cloud Practitioner</p>
+  <p class="hero-eyebrow">Nafeesat Rabiu-Adebayo &nbsp;&middot;&nbsp; PhD &middot; PMP &middot; PMI-ACP &middot; AWS Cloud Practitioner</p>
   <h1 class="hero-title">Where Systems Meet <em>the People</em> They Were Built to Serve</h1>
-  <p class="hero-subtitle">Program Manager. Strategist. Translator. Bridging institutional expertise and human need from the field to the boardroom.</p>
+  <p class="hero-subtitle">Program Strategist. Evaluation Lead. Translator. Bridging institutional expertise and human need from the field to the boardroom.</p>
   <a href="#contact" class="hero-cta">
     Let's Talk
     <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
@@ -847,10 +191,6 @@
       <div class="credential-label">Program Evaluated</div>
     </div>
     <div class="credential-item">
-      <div class="credential-number">50K+</div>
-      <div class="credential-label">End Users Served</div>
-    </div>
-    <div class="credential-item">
       <div class="credential-number">22+</div>
       <div class="credential-label">Countries Reached</div>
     </div>
@@ -862,7 +202,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="reveal">
     <p class="about-label">About</p>
@@ -877,12 +216,12 @@
       <div class="stat-desc">Years leading high-stakes programs across 3 continents</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">4°</div>
-      <div class="stat-desc">Degrees across agriculture, global affairs, and international development</div>
+      <div class="stat-number">4&deg;</div>
+      <div class="stat-desc">Degrees across agriculture, global affairs, and development economics</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">30K+</div>
-      <div class="stat-desc">Views on a global public education platform spanning every continent</div>
+      <div class="stat-desc">Views on a global public education platform spanning 22+ countries</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">6</div>
@@ -891,13 +230,11 @@
   </div>
 </section>
 
-<!-- PHILOSOPHY BAND -->
 <div class="philosophy">
   <p class="philosophy-quote reveal">"The gap between institutional power and human need is never an accident. It is a failure of translation."</p>
   <p class="philosophy-attribution">Nafeesat Rabiu-Adebayo</p>
 </div>
 
-<!-- SERVICES -->
 <section class="services-section" id="services">
   <div class="services-inner">
     <div class="services-header reveal">
@@ -909,17 +246,17 @@
     <div class="services-grid reveal">
       <div class="service-card">
         <div class="service-number">01</div>
-        <h3 class="service-name">Program & Project Management</h3>
+        <h3 class="service-name">Program &amp; Project Management</h3>
         <p class="service-desc">End-to-end ownership of programs and projects from inception to delivery. Strategic planning, operating model design, risk management, stakeholder coordination, and the kind of meticulous execution that thrives in ambiguity, gets things done on time, within scope, and beyond expectation.</p>
       </div>
       <div class="service-card">
         <div class="service-number">02</div>
-        <h3 class="service-name">Program Strategy & Evaluation</h3>
+        <h3 class="service-name">Program Strategy &amp; Evaluation</h3>
         <p class="service-desc">End-to-end design, management, and evaluation of multi-stakeholder programs. From Theory of Change to final readout, with the kind of honest analysis that actually reshapes decisions.</p>
       </div>
       <div class="service-card">
         <div class="service-number">03</div>
-        <h3 class="service-name">Research & Impact Analysis</h3>
+        <h3 class="service-name">Research &amp; Impact Analysis</h3>
         <p class="service-desc">Original research using mixed methods, econometric modeling, and qualitative fieldwork. Built for donors, governments, and foundations who need independent thinking, not recycled literature.</p>
       </div>
       <div class="service-card">
@@ -929,7 +266,7 @@
       </div>
       <div class="service-card">
         <div class="service-number">05</div>
-        <h3 class="service-name">Capacity Building & Training</h3>
+        <h3 class="service-name">Capacity Building &amp; Training</h3>
         <p class="service-desc">Raising the analytical and delivery standards of teams through hands-on training in research methodologies, evidence-based decision making, and program execution frameworks.</p>
       </div>
       <div class="service-card">
@@ -941,7 +278,6 @@
   </div>
 </section>
 
-<!-- THE WORK -->
 <section class="work-section" id="work">
   <div class="work-header reveal">
     <p class="section-label" style="text-align:center;">The Work</p>
@@ -949,52 +285,47 @@
   </div>
   <div class="work-grid reveal">
     <div class="work-card">
-      <p class="work-tag">Product Ownership · AgriTech</p>
-      <h3 class="work-title">OCP Africa Digital Agriculture Platform</h3>
-      <p class="work-desc">Stood between IBM's engineering team and 500+ smallholder farmers as the sole Product Owner. Personally tested every prototype in the field, walked back into the engineering room, and reframed what she had seen into priorities the team could execute. The result was 25% adoption growth and a 30% improvement in end-user income.</p>
+      <p class="work-tag">Product Ownership &middot; AgriTech &middot; Input Subsidy</p>
+      <h3 class="work-title">OCP Africa Digital Platform &amp; Agribooster Program</h3>
+      <p class="work-desc">Two workstreams, one role. On the AgriTech side, progressed from Business Analyst to Product Owner on a digital agriculture platform built with IBM. Conducted stakeholder interviews across the full agricultural value chain, participated in design thinking workshops, guided the prototype through daily agile ceremonies, and presented the working product to senior government executives. On the Agribooster side, supported a bundled input program delivering subsidized seeds, fertilizers, and insecticides to thousands of smallholder farmers through one-stop shops across 5+ states in northern Nigeria.</p>
       <div class="work-outcomes">
         <div class="outcome">
-          <span class="outcome-value">$2M+</span>
-          <span class="outcome-label">Investment Mobilized</span>
+          <span class="outcome-value">1000s</span>
+          <span class="outcome-label">Farmers Reached</span>
         </div>
         <div class="outcome">
-          <span class="outcome-value">+30%</span>
-          <span class="outcome-label">Income Improvement</span>
-        </div>
-        <div class="outcome">
-          <span class="outcome-value">-40%</span>
-          <span class="outcome-label">Manual Process Reduction</span>
+          <span class="outcome-value">5+</span>
+          <span class="outcome-label">States Covered</span>
         </div>
       </div>
     </div>
     <div class="work-card">
-      <p class="work-tag">Operations · National Program</p>
-      <h3 class="work-title">Presidential Fertilizer Initiative, 20 States</h3>
-      <p class="work-desc">Designed and ran nationwide logistics operations serving 50,000+ end users across 20 locations, managing a real-time GPS control room and building inter-agency partnerships across federal ministries, state governments, and private distributors with competing incentives.</p>
+      <p class="work-tag">Operations &middot; National Program</p>
+      <h3 class="work-title">Presidential Fertilizer Initiative</h3>
+      <p class="work-desc">Supervised a team of 10 managing the nationwide transport of urea fertilizer from production sites in Port Harcourt to blending plants across northern Nigeria. Worked with engineers to install GPS tracking routes and configure security-sensitive zone alerts. Managed a real-time control room monitoring daily truck movements and escalating incident reports, collaborating directly with security agencies and government parastatals under sustained political and logistical pressure.</p>
       <div class="work-outcomes">
         <div class="outcome">
-          <span class="outcome-value">50K+</span>
-          <span class="outcome-label">End Users Served</span>
+          <span class="outcome-value">10</span>
+          <span class="outcome-label">Team Supervised</span>
         </div>
         <div class="outcome">
-          <span class="outcome-value">-20%</span>
-          <span class="outcome-label">Distribution Leakage</span>
+          <span class="outcome-value">Live</span>
+          <span class="outcome-label">GPS Control Room</span>
         </div>
         <div class="outcome">
-          <span class="outcome-value">+35%</span>
-          <span class="outcome-label">Targeting Accuracy</span>
+          <span class="outcome-value">National</span>
+          <span class="outcome-label">Distribution Scale</span>
         </div>
       </div>
     </div>
     <div class="work-card">
-      <p class="work-tag">PhD Research · University of East Anglia · 2025</p>
+      <p class="work-tag">PhD Research &middot; University of East Anglia &middot; 2025</p>
       <h3 class="work-title">The Aid-for-Trade Paradox</h3>
-      <p class="work-desc">Doctoral research that named and evidenced a paradox at the heart of global aid policy. Drawing on an original dataset built from scratch, trade cost analysis, export performance data, gravity modelling, and direct fieldwork with respondents across Nigeria, the research revealed that aid simultaneously increases trade costs and improves export performance, a finding with direct implications for how billions in development finance are structured and deployed.</p>
+      <p class="work-desc">Doctoral research that named and evidenced a paradox at the heart of global aid policy. Independently evaluated a $16.6 million bilateral trade initiative, building an original dataset from scratch, combining a process evaluation grounded in Theory of Change with econometric modeling, trade cost analysis, and export performance analysis. Qualitative fieldwork drew on 15 respondents across Nigeria. The research revealed that aid simultaneously increases trade costs and improves export performance, with direct implications for how billions in development finance are structured and deployed.</p>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS -->
 <section class="insights-section" id="insights">
   <div class="insights-inner">
     <div class="insights-header reveal">
@@ -1004,29 +335,28 @@
     </div>
     <div class="insights-grid reveal">
       <div class="insight-card">
-        <p class="insight-type">YouTube · Global Platform</p>
+        <p class="insight-type">YouTube &middot; Global Platform</p>
         <h3 class="insight-title">Small Things, Big Meaning</h3>
-        <p class="insight-desc">A global public education platform with 30,000+ views, translating economic systems and cultural patterns through AI-enabled production. Original content on the logic behind the world we live in, spanning countries and cultures across every continent. <a href="https://www.youtube.com/@smallthingsbigmeaning" target="_blank" style="color:var(--gold); text-decoration:none;">Watch on YouTube</a>.</p>
+        <p class="insight-desc">A global public education platform with 30,000+ views across 22+ countries, translating economic systems and cultural patterns through AI-enabled production. Original content on the logic behind the world we live in. <a href="https://www.youtube.com/@smallthingsbigmeaning" target="_blank" style="color:var(--gold); text-decoration:none;">Watch on YouTube</a>.</p>
       </div>
       <div class="insight-card">
-        <p class="insight-type">Book · Published 2026</p>
+        <p class="insight-type">Book &middot; Published 2026</p>
         <h3 class="insight-title">The Precious Pearl</h3>
         <p class="insight-desc">A translated and annotated collection of over 300 classical Arabic aphorisms. Centuries of wisdom on character, knowledge, and governance made accessible to contemporary readers. <a href="https://a.co/d/0cjJNFpO" target="_blank" style="color:var(--gold); text-decoration:none;">Purchase on Amazon</a>.</p>
       </div>
       <div class="insight-card">
-        <p class="insight-type">Essays · Medium</p>
-        <h3 class="insight-title">Writing on Systems, People & Development</h3>
+        <p class="insight-type">Essays &middot; Medium</p>
+        <h3 class="insight-title">Writing on Systems, People &amp; Development</h3>
         <p class="insight-desc">Eleven published essays on development, culture, economics, and the human systems that shape how we live. Writing that earns its reader's time by saying something true and saying it well. <a href="https://medium.com/@nafeezie" target="_blank" style="color:var(--gold); text-decoration:none;">Read on Medium</a>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CREDENTIALS -->
 <section class="credentials-section" id="credentials">
   <div class="credentials-inner">
     <div class="credentials-header reveal">
-      <p class="section-label" style="text-align:center;">Recognition & Scholarship</p>
+      <p class="section-label" style="text-align:center;">Recognition &amp; Scholarship</p>
       <h2 class="section-title" style="text-align:center; color:var(--ink);">A Record Across Continents</h2>
     </div>
 
@@ -1037,7 +367,7 @@
         <div class="cred-item">
           <p class="cred-title">Summer Fellow &amp; Graduate Fellow</p>
           <p class="cred-org">United Nations Association of the National Capital Area (UNA-NCA), Washington DC &middot; 2021 &ndash; 2022</p>
-          <p class="cred-desc">Conducted policy research and data analysis on UN issues, developed sustainable multilateral solutions considering political underpinnings and interconnected global factors.</p>
+          <p class="cred-desc">Studied UN power dynamics, funding structures, and political constraints shaping decision-making across peacekeeping, climate action, and sustainable development. Continued as a summer fellow conducting data analysis and producing reports.</p>
         </div>
       </div>
 
@@ -1146,25 +476,47 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="contact-inner reveal">
     <p class="contact-label">Get In Touch</p>
     <h2 class="contact-title">Let's Build Something That Actually Works</h2>
     <p class="contact-body">Whether you need a rigorous evaluation, a strategic framework, or someone who can walk into the gap between your institution and the people it serves, this is the conversation to have.</p>
     <div class="contact-links">
-      <a href="https://mail.google.com/mail/?view=cm&to=nafeezie@gmail.com" target="_blank" class="contact-link primary">Get In Touch</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=nra@bridgestrategyconsulting.com" target="_blank" class="contact-link primary">Get In Touch</a>
       <a href="https://www.linkedin.com/in/nafeesat-rabiu-adebayo-phd-28a08a107/" target="_blank" class="contact-link">LinkedIn</a>
-      <a href="https://bridgestrategyconsulting.com/portfolio" target="_blank" class="contact-link">Portfolio</a>
+      <a href="https://nafeezie-jpg.github.io/Portfolio" target="_blank" class="contact-link">Portfolio</a>
     </div>
-    <p style="font-size:0.72rem; letter-spacing:0.1em; color:rgba(245,240,232,0.3); text-transform:uppercase;">Henderson, Nevada &nbsp;·&nbsp; Available for Local and International Projects</p>
+    <p style="font-size:0.72rem; letter-spacing:0.1em; color:rgba(245,240,232,0.3); text-transform:uppercase;">Henderson, Nevada &nbsp;&middot;&nbsp; Available for Local and International Projects</p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-brand">Bridge Strategy <span>Consulting</span> &nbsp;·&nbsp; Nafeesat Rabiu-Adebayo</div>
-  <div class="footer-copy">© 2026 All Rights Reserved</div>
+  <div class="footer-brand">Bridge Strategy <span>Consulting</span> &nbsp;&middot;&nbsp; Nafeesat Rabiu-Adebayo</div>
+  <div class="footer-copy">&copy; 2026 All Rights Reserved</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><scr
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal, .work-card, .insight-card, .service-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
