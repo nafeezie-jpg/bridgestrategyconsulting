@@ -93,6 +93,17 @@
   .service-featured-list li:last-child { border-bottom: none; }
   .service-featured-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
+  /* ===== PARTNERSHIP ===== */
+  .partnership-section { padding: 8rem 4rem; background: var(--cream); border-top: 1px solid var(--border); }
+  .partnership-inner { max-width: 1200px; margin: 0 auto; }
+  .partnership-header { text-align: center; margin-bottom: 3.5rem; }
+  .partnership-intro { max-width: 740px; margin: 1.5rem auto 0; color: var(--text-muted); font-weight: 300; line-height: 1.9; font-size: 0.95rem; }
+  .partner-profile { background: var(--warm); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 2.5rem 3rem; margin-bottom: 3.5rem; }
+  .partner-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.3rem; }
+  .partner-role { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
+  .partner-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; font-weight: 300; }
+  .partner-bio + .partner-bio { margin-top: 1rem; }
+
   /* ===== WORK ===== */
   .work-section { padding: 8rem 4rem; max-width: 1200px; margin: 0 auto; }
   .work-header { text-align: center; margin-bottom: 5rem; }
@@ -115,8 +126,8 @@
   .insights-inner { max-width: 1200px; margin: 0 auto; }
   .insights-header { text-align: center; margin-bottom: 4rem; }
   .insights-subtitle { font-size: 0.9rem; color: var(--text-muted); font-weight: 300; max-width: 500px; margin: 1rem auto 0; }
-  .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .insight-card { background: var(--cream); border: 1px solid var(--border); padding: 2.5rem; transition: all 0.3s; }
+  .insights-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+  .insight-card { background: var(--cream); border: 1px solid var(--border); padding: 2.5rem; transition: all 0.3s; flex: 1 1 300px; max-width: 360px; }
   .insight-card:hover { border-color: var(--gold); transform: translateY(-4px); }
   .insight-type { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
   .insight-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.8rem; }
@@ -165,6 +176,8 @@
     .hero-credentials { display: none; }
     .about { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
     .services-section { padding: 5rem 1.5rem; }
+    .partnership-section { padding: 5rem 1.5rem; }
+    .partner-profile { padding: 2rem 1.5rem; }
     .service-featured { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
     .service-card { border-right: none !important; }
@@ -173,7 +186,7 @@
     .work-section { padding: 5rem 1.5rem; }
     .work-grid { grid-template-columns: 1fr; }
     .insights-section { padding: 5rem 1.5rem; }
-    .insights-grid { grid-template-columns: 1fr; }
+    .insight-card { max-width: none; }
     .contact-section { padding: 5rem 1.5rem; }
     .credentials-section { padding: 5rem 1.5rem; }
     .credentials-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -249,7 +262,7 @@
       <div class="stat-desc">Views on a global public education platform</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">6</div>
+      <div class="stat-number">7</div>
       <div class="stat-desc">Published works across books, academic journals, and public essays</div>
     </div>
   </div>
@@ -392,6 +405,22 @@
   </div>
 </section>
 
+<!-- ===== PARTNERSHIP ===== -->
+<section class="partnership-section" id="partnership">
+  <div class="partnership-inner">
+    <div class="partnership-header reveal">
+      <p class="section-label" style="text-align:center;">In Partnership</p>
+      <h2 class="section-title" style="text-align:center; color: var(--ink);">A Trusted Partner in the Field</h2>
+    </div>
+    <div class="partner-profile reveal" style="max-width:780px; margin:0 auto;">
+      <h3 class="partner-name">Prof. S. A. Aderinoye-Abdulwahab</h3>
+      <p class="partner-role" style="margin-bottom:0.5rem;">Founder, Aidant Agro-Tech Ltd. &middot; Department of Agricultural Extension &amp; Rural Development, University of Ilorin</p>
+      <p style="font-size:0.78rem; color:var(--text-muted); letter-spacing:0.04em; margin-bottom:1.4rem; font-weight:300;">B. Agriculture (Ilorin) &middot; MSc (Sokoto) &middot; PhD (Reading)</p>
+      <p class="partner-bio">On agriculture and climate-resilience work, I collaborate with Aidant Agro-Tech, a Nigerian advisory firm founded by my own professor and mentor, the teacher who first taught me agriculture. Her research spans climate-smart agriculture, pastoralism and grazing under extreme weather, water allocation, and post-harvest systems. Together we extend that expertise to farms and ranches facing climate risk, from Nigeria to the United States and beyond.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== INSIGHTS ===== -->
 <section class="insights-section" id="insights">
   <div class="insights-inner">
@@ -410,6 +439,11 @@
         <p class="insight-type">Book &middot; Published 2026</p>
         <h3 class="insight-title">The Precious Pearl</h3>
         <p class="insight-desc">A translated and annotated collection of over 300 classical Arabic aphorisms. Centuries of wisdom on character, knowledge, and governance made accessible to contemporary readers. <a href="https://a.co/d/0cjJNFpO" target="_blank" style="color:var(--gold); text-decoration:none;">Purchase on Amazon</a>.</p>
+      </div>
+      <div class="insight-card">
+        <p class="insight-type">Fiction &middot; Published 2026</p>
+        <h3 class="insight-title">The Woman Who Sold Futures</h3>
+        <p class="insight-desc">A collection of nine short stories about money, ambition, and the quiet bargains people make to get by. Literary fiction that finds the human weight underneath the systems we live inside. <a href="https://a.co/d/0eXQ0CY4" target="_blank" style="color:var(--gold); text-decoration:none;">Purchase on Amazon</a>.</p>
       </div>
       <div class="insight-card">
         <p class="insight-type">Essays &middot; Medium</p>
@@ -549,7 +583,7 @@
   <div class="contact-inner reveal">
     <p class="contact-label">Get In Touch</p>
     <h2 class="contact-title">Let's Build Something That Actually Works</h2>
-    <p class="contact-body">Whether you need a rigorous evaluation, a technology strategy, agricultural content that moves people, or someone who understands both the soil and the spreadsheet, this is the conversation to start.</p>
+    <p class="contact-body">My work runs from program strategy and evaluation to research, technology, and content that makes complex ideas land, with agriculture and food systems at the center of all of it. If your work lives in the space between how a system functions and the people it was built to serve, this is the conversation to start.</p>
     <div class="contact-links">
       <a href="https://mail.google.com/mail/?view=cm&to=nra@bridgestrategyconsulting.com" target="_blank" class="contact-link primary">Get In Touch</a>
       <a href="https://www.linkedin.com/in/nafeesat-rabiu-adebayo-phd-28a08a107/" target="_blank" class="contact-link">LinkedIn</a>
