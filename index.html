@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nafeesat Rabiu-Adebayo, PhD — Bridge Strategy Consulting</title>
-<meta name="description" content="Bridge Strategy Consulting. An advisory practice led by Nafeesat Rabiu-Adebayo, PhD, political economist and agricultural policy strategist, working across the full food chain, from fertilizer systems and trade to program strategy, evaluation, and agritech. Trained across three continents, working across global food systems.">
+<title>Bridge Strategy Consulting | Agricultural Programme Design, Evaluation &amp; Policy Research</title>
+<meta name="description" content="Bridge Strategy Consulting helps funders and implementers design, deliver, and evaluate agriculture programmes that fit the farmers they are meant to serve. Led by Nafeesat Rabiu-Adebayo, PhD, political economist and agricultural policy strategist.">
+<link rel="canonical" href="https://bridgestrategyconsulting.com/">
+<meta property="og:title" content="Bridge Strategy Consulting | Programs built for the field, not the boardroom">
+<meta property="og:description" content="Agricultural programme design, monitoring and evaluation, and policy research. Led by Nafeesat Rabiu-Adebayo, PhD.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bridgestrategyconsulting.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap" rel="stylesheet">
@@ -15,8 +20,10 @@
     --ink:#1E1A16;
     --ink-soft:#2A2520;
     --muted:#6B6258;
-    --muted-2:#8A8174;
+    --muted-2:#6F6659;
+    --muted-dark:#8A8174;
     --gold:#A87C2E;
+    --gold-text:#875F1F;
     --gold-bright:#C39A4A;
     --line:#D8CFBC;
     --maxw:1140px;
@@ -44,8 +51,20 @@
     font-weight:600;
     letter-spacing:.24em;
     text-transform:uppercase;
-    color:var(--gold);
+    color:var(--gold-text);
   }
+
+  /* skip link */
+  .skip{
+    position:absolute;left:-9999px;top:0;z-index:100;
+    background:var(--ink);color:var(--paper);padding:12px 20px;
+    font-family:"EB Garamond",system-ui,sans-serif;font-size:13px;
+    letter-spacing:.1em;text-transform:uppercase;
+  }
+  .skip:focus{left:0;}
+
+  /* anchored sections clear the sticky nav */
+  section[id],header[id]{scroll-margin-top:84px;}
 
   /* ---------- NAV ---------- */
   nav{
@@ -56,36 +75,33 @@
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .brand{font-family:"EB Garamond",serif;font-size:20px;font-weight:600;letter-spacing:.02em;}
-  .brand span{color:var(--gold);}
-  .nav-links{display:flex;gap:30px;}
+  .brand span{color:var(--gold-text);}
+  .nav-links{display:flex;gap:26px;align-items:center;}
   .nav-links a{font-size:13.5px;letter-spacing:.035em;color:var(--muted);transition:color .2s;}
   .nav-links a:hover{color:var(--ink);}
+  .nav-links a.nav-cta{
+    color:var(--ink);border:1px solid var(--gold);padding:7px 16px;
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  }
+  .nav-links a.nav-cta:hover{background:var(--gold);color:var(--ink);}
   .nav-toggle{display:none;background:none;border:0;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);cursor:pointer;padding:8px 0;}
 
-  /* mobile menu panel */
-  .nav-panel{
-    display:none;
-    border-top:1px solid var(--line);
-    background:var(--paper);
-  }
+  .nav-panel{display:none;border-top:1px solid var(--line);background:var(--paper);}
   .nav-panel.open{display:block;}
   .nav-panel a{
-    display:block;
-    padding:14px 28px;
-    font-size:16px;
-    color:var(--ink-soft);
-    border-bottom:1px solid var(--line);
+    display:block;padding:14px 28px;font-size:16px;
+    color:var(--ink-soft);border-bottom:1px solid var(--line);
   }
   .nav-panel a:last-child{border-bottom:0;}
 
   /* ---------- HERO ---------- */
-  header.hero{padding:96px 0 70px;}
+  header.hero{padding:88px 0 66px;}
   .hero .eyebrow{margin-bottom:26px;}
   .hero h1{
-    font-size:clamp(44px,7vw,88px);
+    font-size:clamp(42px,6.4vw,80px);
     font-weight:500;
     letter-spacing:-.018em;
-    max-width:14ch;
+    max-width:15ch;
   }
   .hero h1 em{font-style:italic;color:var(--gold);}
   .hero-sub{
@@ -95,179 +111,247 @@
     color:var(--ink-soft);
     line-height:1.65;
   }
+  .hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
   .hero-role{
-    margin-top:22px;
+    margin-top:26px;
     font-size:14.5px;
     letter-spacing:.015em;
     color:var(--muted);
   }
 
-  /* ---------- DISTANCE MOTIF ---------- */
-  .distance{margin-top:64px;}
-  .distance-track{
-    position:relative;
-    display:flex;align-items:center;justify-content:space-between;
-    gap:18px;
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 30px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+    border:1px solid var(--gold);color:var(--ink);background:var(--gold);transition:all .25s;cursor:pointer;
+    font-family:"EB Garamond",system-ui,sans-serif;
   }
+  .btn svg{width:15px;height:15px;fill:currentColor;flex:0 0 auto;}
+  .btn:hover{background:transparent;color:var(--gold-text);}
+  .btn.outline{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn.outline:hover{border-color:var(--gold);color:var(--gold-text);}
+  .contact .btn{border-color:var(--gold-bright);background:var(--gold-bright);color:var(--ink);}
+  .contact .btn:hover{background:transparent;color:var(--gold-bright);}
+  .contact .btn.ghost{background:transparent;color:var(--paper);border-color:#4A443B;}
+  .contact .btn.ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+
+  /* ---------- DISTANCE MOTIF ---------- */
+  .distance{margin-top:60px;}
+  .distance-track{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;}
   .dnode{flex:0 0 auto;max-width:30%;}
   .dnode .dlabel{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-2);font-weight:600;}
   .dnode .dval{font-family:"EB Garamond",serif;font-size:clamp(18px,2.4vw,26px);color:var(--ink);line-height:1.15;margin-top:6px;}
   .dnode.right{text-align:right;}
-  .dline{
-    position:relative;flex:1 1 auto;height:1px;background:var(--line);
-    margin:0 4px;align-self:center;top:-14px;
-  }
-  .dline::before{
-    content:"";position:absolute;left:0;top:0;height:1px;width:0;background:var(--gold);
-    animation:draw 2.2s ease forwards .4s;
-  }
+  .dline{position:relative;flex:1 1 auto;height:1px;background:var(--line);margin:0 4px;align-self:center;top:-14px;}
+  .dline::before{content:"";position:absolute;left:0;top:0;height:1px;width:0;background:var(--gold);animation:draw 2.2s ease forwards .4s;}
   .dline .dot{
     position:absolute;top:-3px;left:0;width:7px;height:7px;border-radius:50%;background:var(--gold-bright);
-    box-shadow:0 0 0 4px rgba(195,154,74,.18);
-    animation:travel 2.2s ease forwards .4s;
+    box-shadow:0 0 0 4px rgba(195,154,74,.18);animation:travel 2.2s ease forwards .4s;
   }
-  .dcaption{text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:14px;}
+  .dcaption{text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin-top:14px;}
   @keyframes draw{to{width:100%;}}
   @keyframes travel{to{left:100%;}}
 
   /* ---------- DARK IDEA SECTION ---------- */
-  .idea{background:var(--ink);color:var(--paper);margin-top:90px;padding:104px 0;}
+  .idea{background:var(--ink);color:var(--paper);padding:100px 0;}
   .idea .eyebrow{color:var(--gold-bright);}
-  .idea h2{font-size:clamp(40px,6.5vw,76px);margin:24px 0 0;color:var(--paper);}
+  .idea h2{font-size:clamp(38px,6vw,70px);margin:24px 0 0;color:var(--paper);}
   .idea h2 em{font-style:italic;color:var(--gold-bright);}
   .idea-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-top:48px;align-items:start;}
   .idea-grid p{color:#D8D0C2;font-size:18px;line-height:1.75;margin:0 0 20px;}
   .idea-grid p:last-child{margin-bottom:0;}
-  .idea-grid .lead{font-family:"EB Garamond",serif;font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--paper);font-weight:400;}
+  .idea-grid .lead{font-family:"EB Garamond",serif;font-size:clamp(21px,2.8vw,28px);line-height:1.38;color:var(--paper);font-weight:400;}
   .idea-grid .lead em{font-style:italic;color:var(--gold-bright);}
 
   /* ---------- SECTIONS ---------- */
-  section{padding:96px 0;}
-  .sec-head{max-width:62ch;margin-bottom:54px;}
+  section{padding:92px 0;}
+  .sec-head{max-width:62ch;margin-bottom:50px;}
   .sec-head h2{font-size:clamp(32px,4.6vw,52px);margin-top:18px;}
   .sec-head p{color:var(--muted);margin-top:18px;font-size:18.5px;}
 
-  /* ABOUT */
+  /* ---------- SERVICES ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .svc-cell{background:var(--paper);padding:38px 34px;display:flex;flex-direction:column;}
+  .svc-cell.dark{background:var(--ink);color:var(--paper);}
+  .svc-num{font-size:12px;letter-spacing:.2em;color:var(--gold-text);font-weight:600;font-family:"EB Garamond",system-ui,sans-serif;}
+  .svc-cell.dark .svc-num{color:var(--gold-bright);}
+  .svc-cell h3{font-size:clamp(21px,2.7vw,28px);font-weight:500;margin:14px 0 10px;}
+  .svc-cell.dark h3{color:var(--paper);}
+  .svc-for{font-size:14px;color:var(--muted-2);font-style:italic;margin:0 0 14px;}
+  .svc-cell.dark .svc-for{color:#A79C8B;}
+  .svc-msg{font-size:16.5px;color:var(--ink-soft);margin:0 0 18px;}
+  .svc-cell.dark .svc-msg{color:#D8D0C2;}
+  .svc-deliv{list-style:none;margin:0 0 20px;padding:0;}
+  .svc-deliv li{
+    position:relative;padding-left:17px;font-size:15px;line-height:1.55;
+    color:var(--muted);margin-bottom:6px;
+  }
+  .svc-deliv li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+  .svc-cell.dark .svc-deliv li{color:#C6BCAB;}
+  .svc-cell.dark .svc-deliv li::before{background:var(--gold-bright);}
+  .svc-link{
+    margin-top:auto;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:3px;align-self:flex-start;
+    font-family:"EB Garamond",system-ui,sans-serif;
+  }
+  .svc-cell.dark .svc-link{color:var(--gold-bright);border-color:var(--gold-bright);}
+
+  /* ---------- FEATURED OFFER ---------- */
+  .offer{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .offer h2{font-size:clamp(30px,4vw,44px);margin-top:18px;max-width:18ch;}
+  .offer h2 em{font-style:italic;color:var(--gold);}
+  .offer .lede{color:var(--ink-soft);margin:22px 0 0;font-size:17.5px;}
+  .offer-steps{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .offer-steps li{
+    counter-increment:step;position:relative;padding-left:40px;margin-bottom:16px;
+    font-size:16.5px;color:var(--ink-soft);line-height:1.55;
+  }
+  .offer-steps li::before{
+    content:counter(step,decimal-leading-zero);position:absolute;left:0;top:2px;
+    font-family:"EB Garamond",system-ui,sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.1em;color:var(--gold-text);
+  }
+  .offer-note{margin-top:24px;font-size:14.5px;color:var(--muted-2);font-style:italic;}
+
+  /* ---------- DATA STRIP ---------- */
+  .data{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .data .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding-top:52px;padding-bottom:52px;}
+  .stat .num{font-family:"EB Garamond",serif;font-size:clamp(28px,3.9vw,46px);color:var(--ink);line-height:1;}
+  .stat .num span{color:var(--gold);}
+  .stat .cap{margin-top:12px;font-size:13px;letter-spacing:.06em;color:var(--muted);line-height:1.5;}
+
+  /* ---------- ABOUT ---------- */
   .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start;}
   .about-grid h2{font-size:clamp(30px,4vw,46px);max-width:16ch;}
   .about-grid h2 em{font-style:italic;color:var(--gold);}
   .about-body p{margin:0 0 18px;color:var(--ink-soft);}
   .about-body p:last-child{margin-bottom:0;}
 
-  /* DATA STRIP */
-  .data{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .data .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding-top:54px;padding-bottom:54px;}
-  .stat .num{font-family:"EB Garamond",serif;font-size:clamp(30px,4.2vw,50px);color:var(--ink);line-height:1;}
-  .stat .num span{color:var(--gold);}
-  .stat .cap{margin-top:12px;font-size:13px;letter-spacing:.06em;color:var(--muted);line-height:1.5;}
-
-  /* WORK */
+  /* ---------- WORK ---------- */
   .work-list{border-top:1px solid var(--line);}
   .work-item{
-    display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:baseline;
-    padding:34px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:116px 1fr 230px;gap:32px;align-items:baseline;
+    padding:32px 0;border-bottom:1px solid var(--line);
   }
-  .work-item .wtag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;}
-  .work-item h3{font-size:clamp(24px,3.2vw,34px);font-weight:500;}
+  .work-item .wtag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text);font-weight:600;}
+  .work-item h3{font-size:clamp(22px,3vw,32px);font-weight:500;}
   .work-item .wdesc{grid-column:2;color:var(--muted);margin-top:10px;font-size:16px;max-width:64ch;}
-  .work-item .wmeta{font-size:13px;color:var(--muted-2);letter-spacing:.04em;text-align:right;white-space:nowrap;}
+  .work-item .wmeta{font-size:13px;color:var(--muted-2);letter-spacing:.04em;text-align:right;line-height:1.5;}
 
-  /* FOCUS */
-  .focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-  .focus-cell{background:var(--paper);padding:38px 34px;}
-  .focus-cell.lead-cell{grid-column:1 / -1;background:var(--ink);color:var(--paper);}
-  .focus-cell.wide{grid-column:1 / -1;}
-  .focus-cell .fnum{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:600;}
-  .focus-cell.lead-cell .fnum{color:var(--gold-bright);}
-  .focus-cell h3{font-size:clamp(22px,3vw,30px);font-weight:500;margin:14px 0 12px;}
-  .focus-cell.lead-cell h3{color:var(--paper);}
-  .focus-cell p{font-size:16px;color:var(--muted);margin:0;}
-  .focus-cell.lead-cell p{color:#CFC7B8;}
-
-  /* ARGUMENT */
+  /* ---------- ARGUMENT ---------- */
   .argue-list{border-top:1px solid var(--line);}
-  .argue-item{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;padding:36px 0;border-bottom:1px solid var(--line);}
+  .argue-item{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;padding:34px 0;border-bottom:1px solid var(--line);}
   .argue-item .anum{font-family:"EB Garamond",serif;font-size:26px;color:var(--gold);line-height:1;padding-top:8px;}
-  .argue-item .claim{font-family:"EB Garamond",serif;font-size:clamp(24px,3.4vw,36px);font-weight:500;line-height:1.15;color:var(--ink);}
+  .argue-item .claim{font-family:"EB Garamond",serif;font-size:clamp(23px,3.2vw,34px);font-weight:500;line-height:1.15;color:var(--ink);}
   .argue-item .claim em{font-style:italic;color:var(--gold);}
   .argue-item .gloss{margin-top:12px;color:var(--muted);font-size:16px;max-width:60ch;}
 
-  /* IDEAS / WRITING */
+  /* ---------- INSIGHTS ---------- */
   .ideas-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
-  .icard{border:1px solid var(--line);padding:34px 32px;background:var(--paper);transition:border-color .25s,transform .25s;}
+  .icard{border:1px solid var(--line);padding:32px 30px;background:var(--paper);transition:border-color .25s,transform .25s;}
   .icard:hover{border-color:var(--gold);transform:translateY(-3px);}
-  .icard .ikind{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-  .icard h3{font-size:26px;font-weight:500;margin:14px 0 12px;}
+  .icard .ikind{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);font-weight:600;}
+  .icard h3{font-size:25px;font-weight:500;margin:14px 0 12px;}
   .icard p{font-size:16px;color:var(--muted);margin:0 0 18px;}
   .icard .ilink{font-size:13px;letter-spacing:.06em;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:2px;}
 
-  /* RECOGNITION */
+  /* ---------- RECOGNITION ---------- */
   .rec{background:var(--paper-2);border-top:1px solid var(--line);}
   .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
-  .rec-col h4{font-family:"EB Garamond",system-ui,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .rec-col h4{font-family:"EB Garamond",system-ui,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line);}
   .rec-col ul{list-style:none;margin:0;padding:0;}
   .rec-col li{margin-bottom:18px;font-size:16px;line-height:1.5;color:var(--ink-soft);}
   .rec-col li span{display:block;font-size:13px;color:var(--muted-2);margin-top:3px;letter-spacing:.02em;}
 
-  /* PARTNER */
+  /* ---------- PARTNER ---------- */
   .partner-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start;}
-  .partner-grid h3{font-size:30px;font-weight:500;}
+  .partner-grid h3{font-size:28px;font-weight:500;}
   .partner-grid .pmeta{font-size:13px;color:var(--muted-2);margin-top:8px;letter-spacing:.02em;}
   .partner-grid p{color:var(--ink-soft);margin:0;}
 
-  /* CONTACT */
-  .contact{background:var(--ink);color:var(--paper);text-align:center;}
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--paper);}
   .contact .eyebrow{color:var(--gold-bright);}
-  .contact h2{font-size:clamp(34px,5vw,60px);color:var(--paper);margin:22px auto 0;max-width:18ch;}
+  .contact h2{font-size:clamp(32px,4.6vw,54px);color:var(--paper);margin:20px 0 0;max-width:18ch;}
   .contact h2 em{font-style:italic;color:var(--gold-bright);}
-  .contact p{color:#CFC7B8;max-width:56ch;margin:26px auto 0;font-size:17px;}
-  .contact-actions{margin-top:40px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:15px 30px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
-    border:1px solid var(--gold-bright);color:var(--ink);background:var(--gold-bright);transition:all .25s;cursor:pointer;
+  .contact .intro{color:#CFC7B8;max-width:54ch;margin:24px 0 0;font-size:17px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:start;margin-top:12px;}
+
+  .direct{margin-top:34px;}
+  .direct-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .direct-row svg{width:15px;height:15px;fill:var(--gold-bright);flex:0 0 auto;}
+  .direct-row a,.direct-row span{font-size:15.5px;color:#D8D0C2;letter-spacing:.02em;}
+  .direct-row a:hover{color:var(--gold-bright);}
+
+  .form-field{margin-bottom:18px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .form-field label{
+    display:block;font-family:"EB Garamond",system-ui,sans-serif;font-size:11.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);
+    font-weight:600;margin-bottom:7px;
   }
-  .btn svg{width:15px;height:15px;fill:currentColor;flex:0 0 auto;}
-  .btn:hover{background:transparent;color:var(--gold-bright);}
-  .btn.ghost{background:transparent;color:var(--paper);border-color:#4A443B;}
-  .btn.ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+  .form-field .opt{color:#938979;letter-spacing:.08em;}
+  .form-field input,.form-field select,.form-field textarea{
+    width:100%;background:#231E1A;border:1px solid #73695A;color:var(--paper);
+    font-family:"EB Garamond",Georgia,serif;font-size:16px;padding:11px 13px;
+    border-radius:0;transition:border-color .2s;
+  }
+  .form-field textarea{min-height:110px;resize:vertical;line-height:1.55;}
+  .form-field input:focus,.form-field select:focus,.form-field textarea:focus{
+    outline:none;border-color:var(--gold-bright);
+  }
+  .form-field select{appearance:none;cursor:pointer;}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
+  .form-submit{margin-top:6px;}
+  .form-status{margin-top:16px;font-size:15.5px;color:var(--gold-bright);min-height:1.4em;}
+  .form-status.err{color:#D98A6A;}
+  .form-foot{margin-top:14px;font-size:13.5px;color:#8A8174;line-height:1.5;}
 
-  .contact .loc{margin-top:46px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);}
+  .contact .loc{margin-top:54px;padding-top:30px;border-top:1px solid #332E27;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dark);text-align:center;}
 
-  footer{background:var(--ink);color:var(--muted-2);border-top:1px solid #332E27;padding:30px 0;}
+  .cta-band{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--paper-2);padding:58px 0;text-align:center;
+  }
+  .cta-band p{
+    font-family:"EB Garamond",serif;font-size:clamp(21px,2.8vw,28px);
+    line-height:1.35;color:var(--ink);margin:0 auto 28px;max-width:30ch;
+  }
+  .form-notice{
+    border:1px solid var(--gold-bright);padding:14px 16px;margin:0 0 20px;
+    font-size:15.5px;line-height:1.5;color:#E4DBC9;
+  }
+  .form-notice a{color:var(--gold-bright);border-bottom:1px solid var(--gold-bright);}
+
+  footer{background:var(--ink);color:var(--muted-dark);border-top:1px solid #332E27;padding:30px 0;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;letter-spacing:.04em;}
+  footer .sig{font-style:italic;color:var(--gold-bright);}
 
   /* REVEAL */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;}
   .reveal.in{opacity:1;transform:none;}
 
-
   /* ---------- TYPOGRAPHIC REFINEMENTS ---------- */
-  p, li, .wdesc, .gloss, .focus-cell p, .icard p, .partner-grid p{
-    max-width:72ch;
-  }
-  .about-body p, .idea-grid p, .sec-head p{
-    letter-spacing:.002em;
-  }
-  .eyebrow, .dlabel, .dcaption, .wtag, .fnum, .ikind, .rec-col h4, .btn, .nav-toggle{
+  p, li, .wdesc, .gloss, .icard p, .partner-grid p{max-width:72ch;}
+  .about-body p, .idea-grid p, .sec-head p{letter-spacing:.002em;}
+  .eyebrow, .dlabel, .dcaption, .wtag, .ikind, .rec-col h4, .nav-toggle{
     font-family:"EB Garamond",system-ui,sans-serif;
   }
-  .brand, .dnode .dval, .stat .num, .argue-item .anum, .argue-item .claim{
-    letter-spacing:-.01em;
-  }
-  .hero-sub, .about-body p, .partner-grid p{
-    line-height:1.68;
-  }
+  .brand, .dnode .dval, .stat .num, .argue-item .anum, .argue-item .claim{letter-spacing:-.01em;}
+  .hero-sub, .about-body p, .partner-grid p{line-height:1.68;}
 
   /* ---------- RESPONSIVE ---------- */
-  @media(max-width:860px){
+  @media(max-width:980px){
     .nav-links{display:none;}
     .nav-toggle{display:block;}
-    .idea-grid,.about-grid,.partner-grid{grid-template-columns:1fr;gap:32px;}
+  }
+  @media(max-width:860px){
+    .idea-grid,.about-grid,.partner-grid,.offer-grid,.contact-grid{grid-template-columns:1fr;gap:34px;}
     .data .wrap{grid-template-columns:repeat(2,1fr);gap:34px 24px;}
     .ideas-grid{grid-template-columns:1fr;}
     .rec-grid{grid-template-columns:1fr;gap:38px;}
-    .focus-grid{grid-template-columns:1fr;}
+    .svc-grid{grid-template-columns:1fr;}
     .work-item{grid-template-columns:1fr;gap:8px;}
     .work-item .wdesc{grid-column:1;}
     .work-item .wmeta{text-align:left;}
@@ -277,11 +361,16 @@
     body{font-size:16.5px;}
     .wrap{padding:0 20px;}
     .nav-panel a{padding:14px 20px;}
-    header.hero{padding:64px 0 50px;}
+    header.hero{padding:58px 0 46px;}
+    section{padding:70px 0;}
+    .idea{padding:76px 0;}
     .distance-track{flex-direction:column;align-items:flex-start;gap:20px;}
     .dnode,.dnode.right{max-width:100%;text-align:left;}
     .dline{display:none;}
     .data .wrap{grid-template-columns:1fr 1fr;}
+    .svc-cell{padding:30px 24px;}
+    .form-row{grid-template-columns:1fr;gap:0;}
+    .btn{width:100%;justify-content:center;}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;}
@@ -292,42 +381,47 @@
   }
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 </style>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
+
+<a class="skip" href="#top">Skip to content</a>
 
 <nav>
   <div class="wrap nav-inner">
     <a class="brand" href="#top">Bridge <span>Strategy Consulting</span></a>
     <div class="nav-links">
-      <a href="#idea">The Idea</a>
+      <a href="#services">Services</a>
+      <a href="#start">Start Here</a>
+      <a href="#idea">The Last Mile</a>
       <a href="#about">About</a>
-      <a href="#work">The Work</a>
-      <a href="#argument">Argument</a>
-      <a href="#focus">Focus</a>
-      <a href="#ideas">Writing</a>
-      <a href="#recognition">Recognition</a>
-      <a href="#contact">Contact</a>
+      <a href="#insights">Insights</a>
+      <a class="nav-cta" href="#contact">Work With Me</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel">Menu</button>
   </div>
   <div class="nav-panel" id="navPanel">
-    <a href="#idea">The Idea</a>
+    <a href="#services">Services</a>
+    <a href="#start">Start Here</a>
+    <a href="#idea">The Last Mile</a>
     <a href="#about">About</a>
-    <a href="#work">The Work</a>
-    <a href="#argument">Argument</a>
-    <a href="#focus">Focus</a>
-    <a href="#ideas">Writing</a>
+    <a href="#argument">What I Argue</a>
+    <a href="#insights">Insights</a>
     <a href="#recognition">Recognition</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact">Work With Me</a>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
     <div class="eyebrow reveal">Nafeesat Rabiu-Adebayo · PhD · Political Economy, Agricultural Policy &amp; Food Systems</div>
-    <h1 class="reveal">The systems that <em>feed us,</em> and the evidence that moves them.</h1>
-    <p class="hero-sub reveal">I work across the full length of the food system, from fertilizer and farm inputs to trade, program strategy, and the evidence that guides where resources go. My career has run from the field to the ministry to the trade corridor, and my whole subject is closing the distance between what institutions build and what reaches the people it was meant for.</p>
-    <p class="hero-role reveal">Political economist &amp; agricultural policy strategist · Program leadership · Research, evaluation &amp; trade</p>
+    <h1 class="reveal">Programs built for the field, <em>not the boardroom.</em></h1>
+    <p class="hero-sub reveal">I help funders and implementers design, deliver, and evaluate agriculture programs that actually fit the farmers they are meant to serve.</p>
+    <div class="hero-actions reveal">
+      <a class="btn" href="#contact">Start a conversation</a>
+      <a class="btn outline" href="#services">See how I work</a>
+    </div>
+    <p class="hero-role reveal">Programme design &amp; strategy · Monitoring, evaluation &amp; learning · Policy, trade &amp; institutional analysis</p>
 
     <div class="distance reveal">
       <div class="distance-track">
@@ -348,16 +442,118 @@
 
 <section class="idea" id="idea">
   <div class="wrap">
-    <div class="eyebrow reveal">The Idea</div>
+    <div class="eyebrow reveal">The Problem I Work On</div>
     <h2 class="reveal">The Last <em>Mile</em></h2>
     <div class="idea-grid">
       <div class="reveal">
-        <p class="lead">The world already grows enough food, and it already knows how to farm. Hunger and rural poverty survive somewhere quieter, in the <em>last mile</em> between what institutions produce and what actually reaches the farmer.</p>
+        <p class="lead">Too many farmer programs are designed far from the field, and they discover too late that the plan never fit real life. I am the voice that belongs in the room while the program is still being shaped, the one with the ground experience to know what will work, the rigor to prove whether it did, and the clarity to make the whole thing land.</p>
       </div>
       <div class="reveal">
-        <p>That distance is where food security is decided, and few people have worked it from every side. I have. I have trained smallholder farmers as an extension officer, moved fertilizer at national scale, built technology meant to cross the gap, evaluated the aid designed to close it, and carried what I found back into the rooms where the decisions are made, from government ministries to the institutions that finance food systems.</p>
-        <p>My doctoral research named one version of the problem. Aid can lift a country's exports while quietly raising the cost of trading, so the gains register at the institution and are absorbed before they reach the people who grew the goods. Who captures that value, and why, is a question of politics and institutions rather than agronomy. The pattern repeats wherever food moves. The work, every time, is to close the distance.</p>
+        <p>The world already grows enough food, and it already knows how to farm. Hunger and rural poverty survive somewhere quieter, in the last mile between what institutions produce and what actually reaches the farmer. That distance is where food security is decided, and few people have worked it from every side. I have trained smallholder farmers as an extension officer, moved fertilizer at national scale, built technology meant to cross the gap, and evaluated the aid designed to close it.</p>
+        <p>My doctoral research named one version of the problem. Aid can lift a country's exports while quietly raising the cost of trading, so the gains register at the institution and are absorbed before they reach the people who grew the goods. Who captures that value, and why, is a question of politics and institutions rather than agronomy. The pattern repeats wherever food moves, and the work, every time, is to close the distance.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What I Do</div>
+      <h2>Four ways to bring me in.</h2>
+      <p>Each engagement is scoped and agreed before work begins, and sized to what the question actually needs rather than to a standard package.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-cell reveal">
+        <div class="svc-num">01</div>
+        <h3>Agricultural Programme Design &amp; Strategy</h3>
+        <p class="svc-for">For organizations planning agricultural development, farmer support, food security, or rural livelihood interventions.</p>
+        <p class="svc-msg">Build programmes that account for the realities of implementation before resources are committed.</p>
+        <ul class="svc-deliv">
+          <li>Programme concept notes and design documents</li>
+          <li>Theory of change development</li>
+          <li>Implementation strategies and workplans</li>
+          <li>Stakeholder and institutional analysis</li>
+          <li>Feasibility and delivery assessments</li>
+          <li>Agricultural policy and programme advisory</li>
+        </ul>
+        <a class="svc-link" href="#contact" data-prefill="Agricultural programme design and strategy">Discuss a design brief</a>
+      </div>
+
+      <div class="svc-cell dark reveal">
+        <div class="svc-num">02</div>
+        <h3>Monitoring, Evaluation &amp; Learning</h3>
+        <p class="svc-for">For organizations that need credible evidence of programme performance and outcomes.</p>
+        <p class="svc-msg">Understand what your programme is achieving, where implementation is falling short, and what needs to change.</p>
+        <ul class="svc-deliv">
+          <li>Monitoring and evaluation frameworks</li>
+          <li>Results frameworks and performance indicators</li>
+          <li>Evaluation design and methodology</li>
+          <li>Baseline and endline study design</li>
+          <li>Process and implementation evaluations</li>
+          <li>Mixed-methods research and analysis</li>
+          <li>Learning reports and recommendations</li>
+        </ul>
+        <a class="svc-link" href="#contact" data-prefill="Monitoring, evaluation and learning">Discuss an evaluation</a>
+      </div>
+
+      <div class="svc-cell reveal">
+        <div class="svc-num">03</div>
+        <h3>Agricultural Policy, Trade &amp; Institutional Analysis</h3>
+        <p class="svc-for">For organizations requiring specialized research into the policies, institutions, and economic conditions shaping agricultural development.</p>
+        <p class="svc-msg">Make better decisions with research that connects policy intentions to institutional and market realities.</p>
+        <ul class="svc-deliv">
+          <li>Agricultural policy reviews</li>
+          <li>Trade and market-access analysis</li>
+          <li>Institutional and governance assessments</li>
+          <li>Input and fertilizer systems analysis</li>
+          <li>Political economy research</li>
+          <li>Policy briefs and analytical reports</li>
+        </ul>
+        <a class="svc-link" href="#contact" data-prefill="Agricultural policy, trade and institutional analysis">Discuss a research question</a>
+      </div>
+
+      <div class="svc-cell reveal">
+        <div class="svc-num">04</div>
+        <h3>Technical Research &amp; Proposal Partnerships</h3>
+        <p class="svc-for">For consulting firms, development organizations, and research teams preparing proposals or delivering funded assignments.</p>
+        <p class="svc-msg">Bring credible technical expertise into your proposal or delivery team when you need it.</p>
+        <ul class="svc-deliv">
+          <li>Technical contributions to funding proposals</li>
+          <li>Research methodology development</li>
+          <li>Programme-design inputs</li>
+          <li>Results framework development</li>
+          <li>Evidence synthesis and literature reviews</li>
+          <li>Technical report writing and specialist advisory</li>
+        </ul>
+        <a class="svc-link" href="#contact" data-prefill="Technical or proposal partnership">Add me to your team</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="start">
+  <div class="wrap offer-grid">
+    <div class="reveal">
+      <div class="eyebrow">Start Here</div>
+      <h2>Programme Design and <em>Results Framework Review</em></h2>
+      <p class="lede">A focused review for an organization developing or implementing a programme. It is the straightforward way to get expert eyes on your design before you commission a full evaluation, and the fastest way for us to find out whether we work well together.</p>
+      <div style="margin-top:30px;">
+        <a class="btn" href="#contact" data-prefill="Programme Design and Results Framework Review">Request a Programme Review</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <ol class="offer-steps">
+        <li>Review your existing programme documents.</li>
+        <li>Assess the theory of change and intervention logic.</li>
+        <li>Identify weaknesses in proposed indicators and measurement arrangements.</li>
+        <li>Examine implementation assumptions and the risks they carry.</li>
+        <li>Deliver a concise written assessment with practical recommendations.</li>
+        <li>Talk the findings through with you in a working session.</li>
+      </ol>
+      <p class="offer-note">Scope and fee are tailored to the assignment and agreed in writing before any work begins.</p>
     </div>
   </div>
 </section>
@@ -365,13 +561,14 @@
 <section id="about">
   <div class="wrap about-grid">
     <div class="reveal">
-      <div class="eyebrow" style="margin-bottom:22px;">Who I Am</div>
-      <h2>I work across the <em>whole chain,</em> not one link of it.</h2>
+      <div class="eyebrow" style="margin-bottom:22px;">The Expert in the Room</div>
+      <h2>I have stood in the field and <em>sat at the policy table.</em></h2>
     </div>
     <div class="about-body reveal">
-      <p>I am Nafeesat Rabiu-Adebayo, founder and principal of Bridge Strategy Consulting, a political economist and agricultural policy strategist. I have supervised fertilizer logistics at national scale, owned a digital agriculture platform built with IBM, trained smallholder farmers in the field, and evaluated the trade policy that decides whether a harvest ever reaches a market. Politics and institutions run underneath all of it, since governments, donors, and firms hold the levers that decide who a food system actually serves.</p>
-      <p>I started in the fields of Kwara State, Nigeria, training smallholder farmers through extension work. I moved through national fertilizer logistics, into agritech product development with OCP Africa and IBM, and then into a doctorate at the University of East Anglia's School of Global Development, studying the political economy of how aid and trade travel along agricultural corridors.</p>
-      <p>I hold four degrees across agriculture, global affairs, and international development, formed in Nigeria, the United States, and the United Kingdom. The graduate work covered political economy, NGO management, migration, and conflict studies. PMP, PMI-ACP, and AWS certifications sit alongside executive credentials from Wharton, the World Bank, and the IMF. That range taught me to speak to the farmer and the funder in the same afternoon, in language each one trusts, and that fluency is the whole job.</p>
+      <p>I am Nafeesat Rabiu-Adebayo, founder of Bridge Strategy Consulting, a political economist and agricultural policy strategist. I have trained smallholder farmers in the field and supervised fertilizer logistics under a national program. At OCP Africa I worked as business analyst and then product owner on a digital agriculture platform built with IBM, carrying it from requirements and stakeholder research through to a working prototype. Separately, I supported Agribooster, a bundled-input initiative that reached smallholders across five-plus Nigerian states.</p>
+      <p>I started in the fields of Kwara State, training smallholder farmers through extension work. I moved through national fertilizer logistics, into agritech product development with OCP Africa and IBM, and then into a doctorate at the University of East Anglia's School of Global Development, studying the political economy of how aid and trade travel along agricultural corridors.</p>
+      <p>I hold four degrees across agriculture, global affairs, and international development, formed in Nigeria, the United States, and the United Kingdom. The graduate work covered political economy, NGO management, migration, and conflict studies. PMP, PMI-ACP, and AWS certifications sit alongside executive credentials from Wharton, the World Bank, and the IMF.</p>
+      <p>That range is the point. I can translate between the field and the policy table, which is exactly where most programmes lose their way.</p>
     </div>
   </div>
 </section>
@@ -380,7 +577,7 @@
   <div class="wrap">
     <div class="stat reveal"><div class="num">PhD</div><div class="cap">International Development &amp; Political Economy, University of East Anglia</div></div>
     <div class="stat reveal"><div class="num">National</div><div class="cap">Fertilizer logistics supervised at scale across Nigeria</div></div>
-    <div class="stat reveal"><div class="num">$16.6<span>M</span></div><div class="cap">Bilateral trade initiative independently evaluated</div></div>
+    <div class="stat reveal"><div class="num">$16.6<span>M</span></div><div class="cap">Bilateral trade initiative evaluated for the doctoral research</div></div>
     <div class="stat reveal"><div class="num">3</div><div class="cap">Continents of research and practice</div></div>
     <div class="stat reveal"><div class="num">10<span>+</span></div><div class="cap">Years across the food system, from the field to the policy table</div></div>
   </div>
@@ -389,9 +586,9 @@
 <section id="work">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow">The Work</div>
-      <h2>I have worked the food system at every level it exists.</h2>
-      <p>From the field to the supply chain to the policy table, the same body of work seen from every vantage point.</p>
+      <div class="eyebrow">Professional Background</div>
+      <h2>Where the judgment comes from.</h2>
+      <p>Work carried out in previous roles and doctoral research, before founding Bridge Strategy Consulting. It is the experience the practice is built on rather than a list of Bridge engagements.</p>
     </div>
     <div class="work-list">
       <div class="work-item reveal">
@@ -400,9 +597,9 @@
         <div class="wmeta">Kwara State Ministry of Agriculture</div>
       </div>
       <div class="work-item reveal">
-        <div class="wtag">Research</div>
-        <div><h3>The Aid-for-Trade Paradox</h3><div class="wdesc">My doctoral research named and evidenced a paradox at the heart of aid policy, building an original dataset from scratch and combining a Theory of Change evaluation with trade-cost and corridor analysis. The finding was that aid can improve a country's export performance while raising its trade costs, as governance, informal costs, and institutional behaviour absorb the gains along the way. It carries direct implications for how development finance is targeted and measured.</div></div>
-        <div class="wmeta">University of East Anglia · School of Global Development · 2025</div>
+        <div class="wtag">Operations</div>
+        <div><h3>Presidential Fertilizer Initiative</h3><div class="wdesc">I supervised a team of ten managing the nationwide transport of urea fertilizer from Port Harcourt to blending plants across the north, running a real-time GPS control room and building incident-response protocols with security agencies and government parastatals under sustained pressure.</div></div>
+        <div class="wmeta">TAK Logistics · National</div>
       </div>
       <div class="work-item reveal">
         <div class="wtag">Product</div>
@@ -415,9 +612,9 @@
         <div class="wmeta">OCP Africa · 5+ States</div>
       </div>
       <div class="work-item reveal">
-        <div class="wtag">Operations</div>
-        <div><h3>Presidential Fertilizer Initiative</h3><div class="wdesc">I supervised a team of ten managing the nationwide transport of urea fertilizer from Port Harcourt to blending plants across the north, running a real-time GPS control room and building incident-response protocols with security agencies and government parastatals under sustained pressure.</div></div>
-        <div class="wmeta">TAK Logistics · National</div>
+        <div class="wtag">Research</div>
+        <div><h3>The Aid-for-Trade Paradox</h3><div class="wdesc">My doctoral research named and evidenced a paradox at the heart of aid policy, building an original dataset from scratch and combining a Theory of Change evaluation with trade-cost and corridor analysis. The finding was that aid can improve a country's export performance while raising its trade costs, as governance, informal costs, and institutional behaviour absorb the gains along the way. It carries direct implications for how development finance is targeted and measured.</div></div>
+        <div class="wmeta">University of East Anglia · School of Global Development · 2025</div>
       </div>
     </div>
   </div>
@@ -434,223 +631,19 @@
       <div class="argue-item reveal">
         <div class="anum">01</div>
         <div>
-          <div class="claim">The world grows enough. The food <em>dies on the way to market.</em></div>
-          <div class="gloss">Up to half of some harvests are lost after picking, to broken roads, poor storage, and missing cold chains. The crisis lives in delivery, in the stretch between the farm and the market.</div>
+          <div class="claim">Too much of what farmers grow is <em>lost before it reaches the market.</em></div>
+          <div class="gloss">For perishable crops, inadequate storage, unreliable transport, and gaps in cold-chain infrastructure can cause substantial losses between harvest and sale. Improving agricultural production matters, but so does protecting what farmers have already grown.</div>
         </div>
       </div>
       <div class="argue-item reveal">
         <div class="anum">02</div>
         <div>
-          <div class="claim">Aid lifts a nation's exports while the <em>farmer who grew the crop stays poor.</em></div>
-          <div class="gloss">My doctoral research evidenced this paradox along agricultural trade corridors. Development finance is measured at the port and felt least in the field, and closing that gap is the real test of whether aid works.</div>
+          <div class="claim">Aid can improve export performance while leaving the <em>costs of trading stubbornly high.</em></div>
+          <div class="gloss">My doctoral research examined this tension in Nigeria's agricultural trade system, showing how institutional arrangements, governance, and trade costs complicate the relationship between development assistance and its intended economic outcomes.</div>
         </div>
       </div>
       <div class="argue-item reveal">
         <div class="anum">03</div>
         <div>
-          <div class="claim">Inputs and extension are the cheapest technology in agriculture, and the <em>most neglected.</em></div>
-          <div class="gloss">Getting the right fertilizer, seed, and advice to a farmer changes more than any single innovation does on its own. Rebuilding that delivery is how a food system turns what it already knows into what farmers actually do.</div>
-        </div>
-      </div>
-      <div class="argue-item reveal">
-        <div class="anum">04</div>
-        <div>
-          <div class="claim">Food security is decided in the last mile, where the <em>institution meets the household.</em></div>
-          <div class="gloss">Everything upstream, the research, the funding, the policy, only matters if it survives the final stretch to the family it was meant for. That stretch is my whole subject.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="focus">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Areas of Focus</div>
-      <h2>Where my work lives.</h2>
-    </div>
-    <div class="focus-grid">
-      <div class="focus-cell lead-cell reveal">
-        <div class="fnum">01</div>
-        <h3>Agricultural Policy, Trade &amp; Food Systems</h3>
-        <p>The center of everything I do. Fertilizer and input systems, market access and trade, food security, and the policy that shapes them, grounded in what actually happens between the harvest and the household. I work with organizations building, funding, evaluating, or setting policy for agricultural programs and the systems meant to serve them, globally, with deep field experience across West Africa.</p>
-      </div>
-      <div class="focus-cell reveal">
-        <div class="fnum">02</div>
-        <h3>Program Strategy &amp; Evaluation</h3>
-        <p>End-to-end ownership from design through delivery and honest evaluation, built for complex, multi-stakeholder environments where ambiguity is the norm and meticulous execution is the difference.</p>
-      </div>
-      <div class="focus-cell reveal">
-        <div class="fnum">03</div>
-        <h3>Political Economy, Research &amp; Evaluation</h3>
-        <p>Mixed-methods research, governance and institutional analysis, and qualitative fieldwork for institutions that need independent thinking. I trace who holds power in a system, where value is captured, and why good policy stalls between intent and delivery, across trade corridors, input systems, and contested ground such as land use and farmer-herder conflict.</p>
-      </div>
-      <div class="focus-cell wide reveal">
-        <div class="fnum">04</div>
-        <h3>Digital Agriculture &amp; Applied Technology</h3>
-        <p>Technology built to reach the people it was meant to serve. I shipped an end-to-end digital agriculture platform with IBM covering farm inputs, market access, finance, and advisory services, and I design AI-enabled research and production workflows for food systems work. The test is always the same, whether the tool survives contact with the last mile.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ideas">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Ideas &amp; Writing</div>
-      <h2>Carrying the last mile into public view.</h2>
-      <p>Making the hidden logic of food systems legible to the people who fund them, build them, and depend on them, through research, writing, and public work on rural livelihoods and the distance between institutions and households.</p>
-    </div>
-    <div class="ideas-grid">
-      <div class="icard reveal">
-        <div class="ikind">YouTube · Global Platform</div>
-        <h3>Small Things, Big Meaning</h3>
-        <p>A public education platform translating how the world actually feeds itself, country by country. Tens of thousands of views across more than twenty countries.</p>
-        <a class="ilink" href="https://www.youtube.com/@smallthingsbigmeaning" target="_blank" rel="noopener">Watch on YouTube</a>
-      </div>
-      <div class="icard reveal">
-        <div class="ikind">Book · 2026</div>
-        <h3>The Woman Who Sold Futures</h3>
-        <p>Nine short stories about women whose intelligence lives outside the places the world is trained to look for it, the kind of sharp mind that goes unnamed and miscounted, working quietly inside lives the systems never thought to measure.</p>
-        <a class="ilink" href="https://a.co/d/0eXQ0CY4" target="_blank" rel="noopener">Purchase on Amazon</a>
-      </div>
-      <div class="icard reveal">
-        <div class="ikind">Book · 2026</div>
-        <h3>The Precious Pearl</h3>
-        <p>A translated and annotated collection of over three hundred classical Arabic aphorisms on character, knowledge, and governance, made accessible to contemporary readers.</p>
-        <a class="ilink" href="https://a.co/d/0cjJNFpO" target="_blank" rel="noopener">Purchase on Amazon</a>
-      </div>
-      <div class="icard reveal">
-        <div class="ikind">Essays · Medium</div>
-        <h3>Writing on Systems &amp; People</h3>
-        <p>Essays on development, political economy, and the human systems that shape how we live, written to earn the reader's time by saying something true and saying it well.</p>
-        <a class="ilink" href="https://medium.com/@nafeezie" target="_blank" rel="noopener">Read on Medium</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="rec" id="recognition">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Recognition &amp; Scholarship</div>
-      <h2>A record across continents.</h2>
-    </div>
-    <div class="rec-grid">
-      <div class="rec-col reveal">
-        <h4>Fellowships &amp; Awards</h4>
-        <ul>
-          <li>Global SDG Advocate &amp; Practitioner<span>Distinguished Speaker on SDG 1 &amp; 11, United Kingdom · 2023</span></li>
-          <li>Johannes M. Botes Capstone Achievement Award<span>University of Baltimore · 2022</span></li>
-          <li>Summer &amp; Graduate Fellow<span>UN Association of the National Capital Area, Washington DC · 2021–2022</span></li>
-          <li>Laurence Short Academic Award for International Students<span>University of Baltimore · 2021–2022</span></li>
-          <li>Featherstone College Scholarship<span>The Featherstone Foundation, University of Baltimore · 2021</span></li>
-          <li>Community Development Fellow<span>Pigtown Main Street, Baltimore MD · 2021</span></li>
-          <li>Second Prize, Graduate Seminar Poster Presentation<span>Crop farmer and Fulani herdsmen conflict · Dept. of Agricultural Extension &amp; Rural Development, University of Ilorin · 2017</span></li>
-        </ul>
-      </div>
-      <div class="rec-col reveal">
-        <h4>Selected Publications</h4>
-        <ul>
-          <li>The Aid-for-Trade Paradox: A Mixed-Methods Evaluation of Trade Costs and Agricultural Export Performance in Nigeria<span>PhD Thesis, University of East Anglia · 2025</span></li>
-          <li>Book Review: Michalopoulos, Aid, Trade and Development<span>Political Studies Review · 2023</span></li>
-          <li>Effects of Goat Theft on Women Farmers in Rural Kwara State<span>Bangladesh Journal of Extension Education · 2018</span></li>
-        </ul>
-      </div>
-      <div class="rec-col reveal">
-        <h4>Education &amp; Credentials</h4>
-        <ul>
-          <li>PhD, International Development &amp; Political Economy<span>University of East Anglia, School of Global Development, UK</span></li>
-          <li>MA, Global Affairs &amp; Human Security<span>University of Baltimore, USA · GPA 3.97 · Political economy, international development, NGO management, migration studies, conflict studies</span></li>
-          <li>MSc, Agricultural Extension<span>University of Ilorin, Nigeria · Distinction</span></li>
-          <li>BSc, Agriculture (Honours)<span>University of Ilorin, Nigeria</span></li>
-          <li>Certifications<span>PMP · PMI-ACP · AWS Certified Cloud Practitioner · Practical Application of Generative AI for Project Managers (PMI)</span></li>
-          <li>Executive Training<span>Strategic Management (Wharton) · Macroeconomics of Climate Change (IMF) · Unlocking Investment &amp; Finance in EMDEs (World Bank) · Digital Agriculture (World Bank)</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="partner">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">In Partnership</div>
-      <h2>A trusted collaborator in the field.</h2>
-    </div>
-    <div class="partner-grid">
-      <div class="reveal">
-        <h3>Prof. S. A. Aderinoye-Abdulwahab</h3>
-        <div class="pmeta">Founder, Aidant Agro-Tech Ltd. · Dept. of Agricultural Extension &amp; Rural Development, University of Ilorin</div>
-      </div>
-      <div class="reveal">
-        <p>On agriculture and climate-resilience work, I collaborate with Aidant Agro-Tech, a Nigerian advisory firm founded by my own professor and mentor, the teacher who first taught me agriculture. Her research spans climate-smart agriculture, pastoralism under extreme weather, water allocation, and post-harvest systems. Together we extend that expertise to farms and ranches facing climate risk, from Nigeria to the United States and beyond.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="eyebrow reveal">Get In Touch</div>
-    <h2 class="reveal">Let's close the <em>distance.</em></h2>
-    <p class="reveal">Through Bridge Strategy Consulting I take on advisory, research, evaluation, and speaking engagements across food systems, agricultural trade, and rural development. If your work lives in the space between how a system functions and the people it was built to serve, this is the conversation to start.</p>
-    <div class="contact-actions reveal">
-      <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nra%40bridgestrategyconsulting.com" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 4.76-8-4.76V6l8 4.76L20 6z"/></svg>
-        Email Me
-      </a>
-      <a class="btn ghost" href="tel:+17025730977">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>
-        Call
-      </a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/nafeesat-rabiu-adebayo-phd-28a08a107/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.13 1.45-2.13 2.9V21h-4z"/></svg>
-        LinkedIn
-      </a>
-    </div>
-    <div class="loc reveal">Trained across three continents · Based in the United States · Working across global food systems</div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div>Bridge Strategy Consulting · Led by Nafeesat Rabiu-Adebayo, PhD</div>
-    <div>© 2026 · All rights reserved</div>
-  </div>
-</footer>
-
-<script>
-  /* mobile menu */
-  (function(){
-    var toggle = document.getElementById('navToggle');
-    var panel  = document.getElementById('navPanel');
-    toggle.addEventListener('click', function(){
-      var open = panel.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.textContent = open ? 'Close' : 'Menu';
-    });
-    panel.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        panel.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
-        toggle.textContent = 'Menu';
-      });
-    });
-  })();
-
-  /* reveal on scroll */
-  var els = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  } else {
-    els.forEach(function(el){ el.classList.add('in'); });
-  }
-</script>
-</body>
-</html>
+          <div class="claim">Agricultural innovation means little when farmers <em>cannot access what already works.</em></div>
+          <div class="gloss">Improved seeds, appropriate fertilizer, and reliable extension advice can strengthen agricultural productivity. Their effectiveness depends on whether farmers can access them a
