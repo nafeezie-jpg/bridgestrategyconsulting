@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nafeesat Rabiu-Adebayo | Senior Program Manager Portfolio</title>
+    <title>Nafeesat Rabiu-Adebayo | Program Strategist Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,7 +18,6 @@
         h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
         h4 { font-family: var(--sans); font-weight: 600; }
 
-        /* NAV */
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(15, 41, 66, 0.97); padding: 1rem 0; backdrop-filter: blur(12px); }
         nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
         nav .logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
@@ -27,17 +26,16 @@
         nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; }
         nav a:hover { color: var(--accent); }
 
-        /* HERO */
         .hero { min-height: 100vh; background: linear-gradient(160deg, #0a1f33 0%, #0f2942 30%, #1a4a6e 70%, #1f5a80 100%); display: flex; align-items: center; padding-top: 60px; position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(201,162,39,0.06) 0%, transparent 70%); pointer-events: none; }
-        .hero .container { max-width: 1400px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero .container { max-width: 1400px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
         .hero-credentials { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
         .credential-badge { background: rgba(201,162,39,0.15); border: 1px solid rgba(201,162,39,0.4); color: var(--accent); padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.78rem; font-weight: 500; font-family: var(--sans); letter-spacing: 0.05em; }
         .hero h1 { font-size: 3.8rem; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.01em; }
         .hero h1 span { color: var(--accent); }
         .hero-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-weight: 300; letter-spacing: 0.02em; }
         .hero-description { color: rgba(255,255,255,0.6); font-size: 1.05rem; margin-bottom: 2rem; max-width: 540px; font-weight: 300; line-height: 1.8; }
-        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
         .stat-item { text-align: center; padding: 1.25rem; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s, background 0.3s; }
         .stat-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); }
         .stat-number { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--accent); display: block; }
@@ -51,7 +49,6 @@
         .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.25); }
         .btn-secondary:hover { border-color: rgba(255,255,255,0.5); }
 
-        /* SECTIONS */
         section { padding: 5rem 0; }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
         .section-header { text-align: center; margin-bottom: 4rem; }
@@ -59,7 +56,6 @@
         .section-title { font-size: 2.75rem; color: var(--primary); margin-bottom: 1rem; }
         .section-subtitle { color: var(--gray); font-size: 1.1rem; max-width: 650px; margin: 0 auto; font-weight: 300; line-height: 1.8; }
 
-        /* CASE STUDIES */
         .case-studies { background: var(--white); }
         .case-study { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; padding: 2.5rem; background: var(--light); border-radius: 24px; position: relative; transition: box-shadow 0.4s; }
         .case-study:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
@@ -74,6 +70,7 @@
         .metric-card { background: var(--white); padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--accent); box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s; }
         .metric-card:hover { transform: translateY(-3px); }
         .metric-value { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+        .metric-value-text { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--primary); }
         .metric-label { color: var(--gray); font-size: 0.82rem; font-weight: 400; }
         .dashboard-mockup { background: var(--white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); overflow: hidden; }
         .dashboard-header { background: var(--primary); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
@@ -82,7 +79,6 @@
         .dashboard-title { color: rgba(255,255,255,0.8); font-size: 0.82rem; margin-left: 0.5rem; font-weight: 500; letter-spacing: 0.03em; }
         .dashboard-body { padding: 1.5rem; }
 
-        /* PUBLICATIONS */
         .publications { background: var(--light); }
         .pub-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 600px; margin: 0 auto; }
         .pub-card { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
@@ -90,13 +86,11 @@
         .pub-card::after { content: ''; position: absolute; bottom: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%); pointer-events: none; }
         .pub-status { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
         .pub-status.published { background: #e8f5e9; color: #2e7d32; }
-        .pub-status.forthcoming { background: #fff3e0; color: #e65100; }
         .pub-card h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--primary); margin-bottom: 0.5rem; line-height: 1.3; }
         .pub-card .pub-subtitle { font-style: italic; color: var(--accent); font-size: 0.95rem; margin-bottom: 1rem; font-weight: 400; }
         .pub-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; font-weight: 300; }
         .pub-card .pub-meta { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #eee; font-size: 0.85rem; color: var(--gray); font-weight: 400; }
 
-        /* SKILLS */
         .skills-section { background: linear-gradient(160deg, #0a1f33 0%, #0f2942 30%, #1a4a6e 70%, #1f5a80 100%); color: var(--white); position: relative; overflow: hidden; }
         .skills-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
         .skills-section .section-title { color: var(--white); }
@@ -110,7 +104,6 @@
         .skill-list li { color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 300; }
         .skill-list li:last-child { border-bottom: none; }
 
-        /* CERTIFICATIONS */
         .certifications { background: var(--white); }
         .cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
         .cert-card { background: var(--light); border-radius: 16px; padding: 2rem 1.5rem; text-align: center; border: 2px solid transparent; transition: border-color 0.3s, transform 0.3s; }
@@ -119,7 +112,6 @@
         .cert-name { font-weight: 600; color: var(--primary); margin-bottom: 0.25rem; font-size: 0.92rem; }
         .cert-issuer { color: var(--gray); font-size: 0.82rem; font-weight: 300; }
 
-        /* EDUCATION */
         .education { background: var(--light); }
         .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
         .edu-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-left: 4px solid var(--accent); transition: transform 0.3s; }
@@ -128,7 +120,6 @@
         .edu-school { color: var(--accent); font-weight: 500; margin-bottom: 0.25rem; font-size: 0.95rem; }
         .edu-details { color: var(--gray); font-size: 0.88rem; font-weight: 300; }
 
-        /* CONTACT */
         .contact { background: linear-gradient(160deg, #0a1f33 0%, #0f2942 30%, #1a4a6e 70%, #1f5a80 100%); color: var(--white); text-align: center; padding: 4rem 0; }
         .contact .section-title { color: var(--white); }
         .contact-info { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
@@ -138,14 +129,12 @@
         .contact-icon { width: 44px; height: 44px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
         footer { background: #0a1929; color: rgba(255,255,255,0.4); text-align: center; padding: 2rem; font-size: 0.85rem; font-weight: 300; }
 
-        /* ANIMATIONS */
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .fade-up { opacity: 0; animation: fadeUp 0.8s ease forwards; }
         .fade-up.d1 { animation-delay: 0.1s; } .fade-up.d2 { animation-delay: 0.2s; } .fade-up.d3 { animation-delay: 0.3s; } .fade-up.d4 { animation-delay: 0.4s; }
 
-        /* RESPONSIVE */
         @media (max-width: 1200px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 992px) { .hero .container { grid-template-columns: 1fr; text-align: center; } .hero-description { margin: 0 auto 2rem; } .cta-buttons { justify-content: center; } .hero-stats { grid-template-columns: repeat(2, 1fr); } .case-study { grid-template-columns: 1fr; } .case-study:nth-child(even) { direction: ltr; } .pub-grid { max-width: 100%; } nav ul { display: none; } }
+        @media (max-width: 992px) { .hero .container { text-align: center; align-items: center; } .hero-description { margin: 0 auto 2rem; } .cta-buttons { justify-content: center; } .case-study { grid-template-columns: 1fr; } .case-study:nth-child(even) { direction: ltr; } .pub-grid { max-width: 100%; } nav ul { display: none; } }
         @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .section-title { font-size: 2rem; } .skills-grid { grid-template-columns: 1fr; } .cert-grid { grid-template-columns: repeat(2, 1fr); } .education-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -157,105 +146,93 @@
             <div class="hero-content">
                 <div class="hero-credentials fade-up"><span class="credential-badge">PhD</span><span class="credential-badge">PMP&#174;</span><span class="credential-badge">PMI-ACP&#174;</span><span class="credential-badge">AWS Certified</span></div>
                 <h1 class="fade-up d1">Nafeesat <span>Rabiu-Adebayo</span></h1>
-                <p class="hero-subtitle fade-up d2">Senior Program Manager &ensp;|&ensp; Published Author &ensp;|&ensp; Development Economist</p>
-                <p class="hero-description fade-up d3">I build the systems that make complex programs work. From $16M+ portfolios and nationwide operations to published books and AI-powered content platforms, I translate strategy into execution and complexity into clarity.</p>
+                <p class="hero-subtitle fade-up d2">Program Strategist &ensp;|&ensp; Evaluation Lead &ensp;|&ensp; Published Author</p>
+                <p class="hero-description fade-up d3">I close the gap between what institutions intend and what people on the ground actually experience. From a $16.6M trade program evaluation to nationwide fertilizer distribution to evaluating how AI models reason, I translate complexity into outcomes.</p>
                 <div class="cta-buttons fade-up d4"><a href="#portfolio" class="btn btn-primary">View Portfolio</a><a href="#contact" class="btn btn-secondary">Get in Touch</a></div>
-                <div class="hero-stats fade-up d4">
-                    <div class="stat-item"><span class="stat-number">$18.6M+</span><span class="stat-label">Portfolio Value</span></div>
-                    <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">On-Time Delivery</span></div>
-                    <div class="stat-item"><span class="stat-number">50K+</span><span class="stat-label">End Users Served</span></div>
-                    <div class="stat-item"><span class="stat-number">8+</span><span class="stat-label">Years Experience</span></div>
-                </div>
-            </div>
-            <div class="hero-dashboard fade-up d3">
-                <div style="text-align:center; padding: 0.5rem 0 1rem;">
-                    <span style="display:inline-block; font-family:var(--sans); font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); background:#f0f0f0; padding:0.3rem 0.8rem; border-radius:50px;">Program Performance Dashboard &ensp; <span style="color:#28ca42;">&#9679;</span> LIVE</span>
-                </div>
-                <svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="10" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Total Budget</text><text x="10" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">$16.6M</text>
-                    <rect x="115" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="125" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Components</text><text x="125" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">3</text>
-                    <rect x="230" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="240" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Export Growth</text><text x="240" y="38" fill="#28ca42" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">+23%</text>
-                    <rect x="345" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="355" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Team Size</text><text x="355" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">15</text>
-                    <rect x="0" y="60" width="450" height="135" fill="#fafbfc" rx="4"/>
-                    <text x="15" y="82" fill="#0f2942" font-family="Outfit, Arial" font-size="10" font-weight="600">Export Performance Trend</text>
-                    <path d="M20,180 L80,165 L140,150 L200,130 L260,115 L320,95 L380,75 L430,62" fill="none" stroke="#c9a227" stroke-width="2.5" stroke-linecap="round"/>
-                    <path d="M20,180 L80,165 L140,150 L200,130 L260,115 L320,95 L380,75 L430,62 L430,190 L20,190 Z" fill="url(#goldGradient)" opacity="0.15"/>
-                    <defs><linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a227"/><stop offset="100%" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs>
-                    <rect x="310" y="68" width="130" height="55" fill="white" rx="6" stroke="#eee" stroke-width="1"/>
-                    <text x="320" y="85" fill="#0f2942" font-family="Outfit, Arial" font-size="9" font-weight="600">Evaluation Status</text>
-                    <text x="320" y="100" fill="#28ca42" font-family="Outfit, Arial" font-size="8">&#9679; Completed: 3</text>
-                    <text x="320" y="112" fill="#28ca42" font-family="Outfit, Arial" font-size="8">&#9679; On Track: 100%</text>
-                </svg>
             </div>
         </div>
     </section>
 
     <section class="case-studies" id="portfolio">
         <div class="container">
-            <div class="section-header"><span class="section-label">Portfolio</span><h2 class="section-title">Featured Case Studies</h2><p class="section-subtitle">Delivering measurable impact through strategic program management, product ownership, and data-driven execution at scale.</p></div>
+            <div class="section-header"><span class="section-label">Portfolio</span><h2 class="section-title">Featured Case Studies</h2><p class="section-subtitle">Delivering impact through program evaluation, product ownership, operations management, and collaborative research.</p></div>
 
+            <!-- CASE STUDY 1: TRADE EVALUATION -->
             <div class="case-study">
                 <div class="case-study-content">
                     <h3>Bilateral Trade Program Evaluation</h3>
-                    <div class="case-study-meta"><span class="meta-tag">$16.6M Budget</span><span class="meta-tag">University of East Anglia</span><span class="meta-tag">2023&#8211;2025</span></div>
-                    <p>Owned end-to-end delivery of a comprehensive evaluation of a multi-stakeholder trade facilitation initiative spanning three major components, with approximately 47% of total budget allocated to infrastructure development.</p>
-                    <p>Designed Theory of Change framework, led a 15-person cross-functional team, and applied mixed-methods analysis triangulating qualitative fieldwork (key informant interviews, document review) with quantitative trade data using augmented gravity modeling to trace implementation effectiveness across government agencies, private sector partners, and end-user communities.</p>
+                    <div class="case-study-meta"><span class="meta-tag">$16.6M Program</span><span class="meta-tag">University of East Anglia</span><span class="meta-tag">2022&#8211;2025</span></div>
+                    <p>Conducted a full independent evaluation of a $16.6 million bilateral trade facilitation initiative as doctoral research. Designed the evaluation strategy and methodology from scratch, combining a process evaluation grounded in Theory of Change with econometric modeling using augmented gravity models and export performance analysis, all built on an original dataset.</p>
+                    <p>The qualitative component drew on fieldwork across 15 respondents to trace how the program was implemented and where it deviated from its intended design. The analysis surfaced the Aid-for-Trade Paradox: the finding that development aid can simultaneously improve export performance while increasing trade costs, a finding that emerged from the triangulation of quantitative trade data with qualitative fieldwork evidence.</p>
                     <div class="case-study-metrics">
-                        <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Components Evaluated</div></div>
-                        <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">On-Time Completion</div></div>
-                        <div class="metric-card"><div class="metric-value">+23%</div><div class="metric-label">Export Growth</div></div>
-                        <div class="metric-card"><div class="metric-value">12</div><div class="metric-label">KPI Dashboards</div></div>
+                        <div class="metric-card"><div class="metric-value-text">Productive Capacity</div><div class="metric-label">Component 1</div></div>
+                        <div class="metric-card"><div class="metric-value-text">Economic Infrastructure</div><div class="metric-label">Component 2</div></div>
+                        <div class="metric-card"><div class="metric-value-text">Trade Policies &amp; Regulations</div><div class="metric-label">Component 3</div></div>
                     </div>
                 </div>
-                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Export Performance Dashboard</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="10" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Budget</text><text x="10" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">$16.6M</text><rect x="115" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="125" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Infrastructure</text><text x="125" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">47%</text><rect x="230" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="240" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Stakeholders</text><text x="240" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">15+</text><rect x="345" y="0" width="105" height="50" fill="#f8f9fa" rx="6"/><text x="355" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Components</text><text x="355" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="16" font-weight="bold">3</text><rect x="0" y="60" width="450" height="135" fill="#fafbfc" rx="4"/><path d="M20,180 L80,160 L140,145 L200,120 L260,105 L320,90 L380,70 L430,60" fill="none" stroke="#c9a227" stroke-width="3"/></svg></div></div></div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Research Methods &amp; Finding</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="140" height="50" fill="#f8f9fa" rx="6"/><text x="10" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Gravity Model</text><text x="10" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="14" font-weight="bold">Econometric</text></rect><rect x="155" y="0" width="140" height="50" fill="#f8f9fa" rx="6"/><text x="165" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Process Evaluation</text><text x="165" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="14" font-weight="bold">Theory of Change</text></rect><rect x="310" y="0" width="140" height="50" fill="#f8f9fa" rx="6"/><text x="320" y="18" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Fieldwork</text><text x="320" y="38" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="14" font-weight="bold">15 Respondents</text></rect><rect x="0" y="60" width="450" height="135" fill="#fafbfc" rx="4"/><text x="15" y="82" fill="#0f2942" font-family="Outfit, Arial" font-size="10" font-weight="600">The Aid-for-Trade Paradox</text><text x="15" y="102" fill="#6b7280" font-family="Outfit, Arial" font-size="8">Aid simultaneously improves export performance</text><text x="15" y="115" fill="#6b7280" font-family="Outfit, Arial" font-size="8">while increasing trade costs</text><path d="M20,180 L80,165 L140,150 L200,135 L260,125 L320,110 L380,100 L430,90" fill="none" stroke="#28ca42" stroke-width="2" stroke-dasharray="4,4"/><text x="435" y="88" fill="#28ca42" font-family="Outfit, Arial" font-size="7">Exports &#8593;</text><path d="M20,170 L80,162 L140,155 L200,148 L260,142 L320,137 L380,132 L430,128" fill="none" stroke="#c9a227" stroke-width="2"/><text x="435" y="126" fill="#c9a227" font-family="Outfit, Arial" font-size="7">Trade Costs &#8593;</text></svg></div></div></div>
             </div>
 
+            <!-- CASE STUDY 2: OCP AFRICA - AGRITECH PLATFORM -->
             <div class="case-study">
                 <div class="case-study-content">
-                    <h3>Digital AgriTech Platform</h3>
+                    <h3>Digital Agriculture Platform for Africa (AgriTech)</h3>
                     <div class="case-study-meta"><span class="meta-tag">Product Owner</span><span class="meta-tag">OCP Africa &amp; IBM</span><span class="meta-tag">2018&#8211;2019</span></div>
-                    <p>Owned product lifecycle as Product Owner for a digital agriculture platform developed in partnership with IBM, bridging deep agricultural domain expertise with technical development. Managed prioritized backlog, led bi-weekly sprint planning with engineering teams, and participated in every prototype testing session to ensure user-centric design.</p>
-                    <p>Brokered strategic partnerships mobilizing $2M+ in investment by building alignment between Fortune 500 partners, government agencies, and end-user cooperatives through structured governance forums.</p>
+                    <p>Led the conceptualization and development of an end-to-end digital agriculture platform in partnership with IBM, designed to connect farmers across Africa to inputs, markets, agronomic advice, financial services, and farm management tools. Progressed from Business Analyst to Product Owner over the course of the engagement.</p>
+                    <p>Conducted stakeholder interviews across the full agricultural value chain, including input manufacturers, insurance companies, government ministries, NGOs, farmer groups, distributors, and agrodealers. Participated in design thinking workshops, guided prototype development through daily standups and sprint ceremonies with the IBM technical team, and presented the working prototype to senior government executives. The platform continued development beyond the initial engagement.</p>
                     <div class="case-study-metrics">
-                        <div class="metric-card"><div class="metric-value">$2M+</div><div class="metric-label">Investment Mobilized</div></div>
-                        <div class="metric-card"><div class="metric-value">+25%</div><div class="metric-label">Platform Adoption</div></div>
-                        <div class="metric-card"><div class="metric-value">+30%</div><div class="metric-label">End-User Income Growth</div></div>
-                        <div class="metric-card"><div class="metric-value">500+</div><div class="metric-label">Users Trained</div></div>
+                        <div class="metric-card"><div class="metric-value">5</div><div class="metric-label">Platform Domains</div></div>
+                        <div class="metric-card"><div class="metric-value">OCP + IBM</div><div class="metric-label">Cross-Organizational Team</div></div>
                     </div>
                 </div>
-                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">AgriTech Platform Analytics</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="220" height="100" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">User Adoption by Region</text><rect x="25" y="35" width="30" height="55" fill="#1a4a6e" rx="3"/><rect x="65" y="45" width="30" height="45" fill="#1a4a6e" rx="3"/><rect x="105" y="40" width="30" height="50" fill="#c9a227" rx="3"/><rect x="145" y="50" width="30" height="40" fill="#1a4a6e" rx="3"/><rect x="185" y="55" width="30" height="35" fill="#1a4a6e" rx="3"/><rect x="230" y="0" width="220" height="100" fill="#f8f9fa" rx="8"/><text x="245" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">KPI Achievement</text><circle cx="340" cy="60" r="30" fill="none" stroke="#e5e7eb" stroke-width="8"/><circle cx="340" cy="60" r="30" fill="none" stroke="#c9a227" stroke-width="8" stroke-dasharray="188" stroke-dashoffset="0" transform="rotate(-90 340 60)"/><text x="340" y="65" fill="#0f2942" font-family="Cormorant Garamond, Georgia" font-size="12" font-weight="bold" text-anchor="middle">15/15</text><rect x="0" y="110" width="450" height="85" fill="#f8f9fa" rx="8"/><text x="15" y="132" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Efficiency Gains</text><rect x="25" y="145" width="180" height="20" fill="#e8f5e9" rx="4"/><text x="35" y="159" fill="#28ca42" font-family="Outfit, Arial" font-size="11" font-weight="bold">Manual Process: -40%</text><rect x="240" y="145" width="180" height="20" fill="#fff8e1" rx="4"/><text x="250" y="159" fill="#c9a227" font-family="Outfit, Arial" font-size="11" font-weight="bold">Income Growth: +30%</text></svg></div></div></div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">AgriTech Platform</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="450" height="55" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Platform Domains</text><text x="15" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="8">Farm Inputs &#8226; Market Access &#8226; Financial Services &#8226; Agronomic Advice &#8226; Farm Management</text><rect x="0" y="65" width="220" height="130" fill="#f8f9fa" rx="8"/><text x="15" y="87" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Platform Features</text><text x="15" y="108" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Farmer Registration &amp; Profiling</text><text x="15" y="126" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Product Catalog &amp; Marketplace</text><text x="15" y="144" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Agrodealer Affiliation System</text><text x="15" y="162" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Order &amp; Quotation Management</text><text x="15" y="180" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Salesman &amp; AEA Network</text><rect x="230" y="65" width="220" height="130" fill="#f8f9fa" rx="8"/><text x="245" y="87" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Stakeholders Engaged</text><text x="245" y="108" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Input Manufacturers</text><text x="245" y="126" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Government Ministries</text><text x="245" y="144" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Insurance &amp; Microfinance</text><text x="245" y="162" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Farmer Groups &amp; Cooperatives</text><text x="245" y="180" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Distributors &amp; Agrodealers</text></svg></div></div></div>
             </div>
 
+            <!-- CASE STUDY 3: OCP AFRICA - AGRIBOOSTER -->
             <div class="case-study">
                 <div class="case-study-content">
-                    <h3>National Logistics and Operations Program</h3>
-                    <div class="case-study-meta"><span class="meta-tag">20 Locations</span><span class="meta-tag">TAK Logistics</span><span class="meta-tag">2016&#8211;2018</span></div>
-                    <p>Coordinated nationwide distribution operations across 20 locations serving 50,000+ end users, with full ownership of budget, execution timelines, and delivery outcomes within government constraints.</p>
-                    <p>Supervised a 10-person operations team monitoring real-time GPS tracking of distribution vehicles nationwide. Built inter-agency partnerships across government agencies and private distributors, creating escalation pathways and conflict-resolution mechanisms to keep programs on track.</p>
+                    <h3>Agribooster Bundled Input Program</h3>
+                    <div class="case-study-meta"><span class="meta-tag">Business Analyst</span><span class="meta-tag">OCP Africa</span><span class="meta-tag">2018&#8211;2019</span></div>
+                    <p>Supported OCP Africa's Agribooster initiative, which bundled seeds, fertilizers, and insecticides into single subsidized packages so that smallholder farmers could access all their inputs at once, delivered through one-stop shops staffed with extension agents across northern Nigeria.</p>
+                    <p>Handled the corporate side of the program while two other analysts worked in the field with farmers. Travelled regularly across northern Nigeria to lead stakeholder engagement with state agriculture ministries, farmer cooperatives, input suppliers, and one-stop shop operators, building alignment between groups with very different priorities and incentives.</p>
                     <div class="case-study-metrics">
-                        <div class="metric-card"><div class="metric-value">50K+</div><div class="metric-label">End Users Served</div></div>
-                        <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Coverage Achieved</div></div>
-                        <div class="metric-card"><div class="metric-value">-20%</div><div class="metric-label">Distribution Leakage</div></div>
-                        <div class="metric-card"><div class="metric-value">+35%</div><div class="metric-label">Targeting Accuracy</div></div>
+                        <div class="metric-card"><div class="metric-value">1000s</div><div class="metric-label">Farmers Reached</div></div>
+                        <div class="metric-card"><div class="metric-value">5+</div><div class="metric-label">States Covered</div></div>
                     </div>
                 </div>
-                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Operations Control Center</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="260" height="130" fill="#e8f4f8" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Live Fleet Tracking</text><path d="M50,40 L80,35 L130,40 L180,35 L220,45 L230,70 L225,100 L200,115 L150,113 L100,110 L60,95 L45,70 L50,50 Z" fill="#d4e6ed" stroke="#1a4a6e" stroke-width="2"/><circle cx="100" cy="60" r="5" fill="#28ca42"/><circle cx="150" cy="75" r="5" fill="#28ca42"/><circle cx="180" cy="65" r="5" fill="#c9a227"/><circle cx="130" cy="90" r="5" fill="#28ca42"/><rect x="270" y="0" width="180" height="130" fill="#f8f9fa" rx="8"/><text x="285" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Real-Time Status</text><rect x="285" y="35" width="150" height="28" fill="#f0fdf4" rx="4"/><text x="295" y="54" fill="#28ca42" font-family="Outfit, Arial" font-size="11" font-weight="bold">Deliveries: 234</text><rect x="285" y="70" width="150" height="28" fill="#fff8e1" rx="4"/><text x="295" y="89" fill="#c9a227" font-family="Outfit, Arial" font-size="11" font-weight="bold">En Route: 47</text><rect x="285" y="105" width="150" height="20" fill="white" rx="4" stroke="#e5e7eb"/><text x="295" y="119" fill="#0f2942" font-family="Outfit, Arial" font-size="10">Locations: 20/20 &#10003;</text><rect x="0" y="140" width="450" height="55" fill="#f8f9fa" rx="8"/><text x="15" y="162" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Performance</text><text x="15" y="182" fill="#6b7280" font-family="Outfit, Arial" font-size="9">On Time: 96%</text><rect x="90" y="173" width="100" height="10" fill="#e5e7eb" rx="5"/><rect x="90" y="173" width="96" height="10" fill="#28ca42" rx="5"/><text x="240" y="182" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Accuracy: 90%</text><rect x="320" y="173" width="100" height="10" fill="#e5e7eb" rx="5"/><rect x="320" y="173" width="90" height="10" fill="#c9a227" rx="5"/></svg></div></div></div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Agribooster Program</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="450" height="90" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Bundled Input Model</text><rect x="25" y="38" width="110" height="40" fill="#e8f5e9" rx="6"/><text x="45" y="63" fill="#2e7d32" font-family="Outfit, Arial" font-size="10" font-weight="500">Seeds</text><rect x="155" y="38" width="110" height="40" fill="#fff8e1" rx="6"/><text x="170" y="63" fill="#c9a227" font-family="Outfit, Arial" font-size="10" font-weight="500">Fertilizers</text><rect x="285" y="38" width="130" height="40" fill="#e3f2fd" rx="6"/><text x="300" y="63" fill="#1565c0" font-family="Outfit, Arial" font-size="10" font-weight="500">Insecticides</text><rect x="0" y="100" width="220" height="95" fill="#f8f9fa" rx="8"/><text x="15" y="122" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Coverage: Northern Nigeria</text><text x="15" y="145" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Bauchi</text><text x="15" y="163" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Kaduna</text><text x="15" y="181" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Kano + others</text><rect x="230" y="100" width="220" height="95" fill="#f8f9fa" rx="8"/><text x="245" y="122" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Delivery Model</text><text x="245" y="145" fill="#6b7280" font-family="Outfit, Arial" font-size="9">One-Stop Shops</text><text x="245" y="163" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Extension Agents On-Site</text><text x="245" y="181" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Subsidized Pricing</text></svg></div></div></div>
             </div>
 
+            <!-- CASE STUDY 4: TAK LOGISTICS -->
             <div class="case-study">
                 <div class="case-study-content">
-                    <h3>Multi-City Urban Infrastructure Analysis</h3>
+                    <h3>Presidential Fertilizer Initiative</h3>
+                    <div class="case-study-meta"><span class="meta-tag">Operations &amp; GPS Tracking</span><span class="meta-tag">TAK Logistics</span><span class="meta-tag">2017&#8211;2018</span></div>
+                    <p>Supervised a team of 10 managing the nationwide transport of urea fertilizer from production sites in Port Harcourt to blending plants across northern Nigeria as part of the Presidential Fertilizer Initiative, a national fertilizer subsidy program.</p>
+                    <p>Worked with engineers to install GPS tracking routes and identify segments with national security concerns, configuring the system to flag when trucks entered sensitive areas. Managed a real-time control room monitoring daily truck movements from origin to destination, escalating incident reports to management as issues arose during transit. Collaborated directly with security agencies and government parastatals to maintain coordination under political and logistical pressure.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric-card"><div class="metric-value">10</div><div class="metric-label">Team Members Supervised</div></div>
+                        <div class="metric-card"><div class="metric-value">Supervised</div><div class="metric-label">GPS Tracking Control Room</div></div>
+                        <div class="metric-card"><div class="metric-value">National</div><div class="metric-label">Distribution Coverage</div></div>
+                        <div class="metric-card"><div class="metric-value">Daily</div><div class="metric-label">Monitoring &amp; Escalation</div></div>
+                    </div>
+                </div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">GPS Tracking Control Room</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="260" height="130" fill="#e8f4f8" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Route Monitoring</text><path d="M50,40 L80,35 L130,40 L180,35 L220,45 L230,70 L225,100 L200,115 L150,113 L100,110 L60,95 L45,70 L50,50 Z" fill="#d4e6ed" stroke="#1a4a6e" stroke-width="2"/><circle cx="80" cy="100" r="6" fill="#c9a227"/><text x="72" y="120" fill="#6b7280" font-family="Outfit, Arial" font-size="6">PH</text><circle cx="150" cy="55" r="5" fill="#28ca42"/><circle cx="180" cy="65" r="5" fill="#28ca42"/><circle cx="130" cy="75" r="5" fill="#28ca42"/><path d="M80,100 L130,75 L150,55 L180,65" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-dasharray="3,3"/><rect x="270" y="0" width="180" height="130" fill="#f8f9fa" rx="8"/><text x="285" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Daily Status</text><rect x="285" y="35" width="150" height="28" fill="#f0fdf4" rx="4"/><text x="295" y="54" fill="#28ca42" font-family="Outfit, Arial" font-size="11" font-weight="bold">Trucks: In Transit</text><rect x="285" y="70" width="150" height="28" fill="#fff8e1" rx="4"/><text x="295" y="89" fill="#c9a227" font-family="Outfit, Arial" font-size="11" font-weight="bold">Route: PH &#8594; North</text><rect x="285" y="105" width="150" height="20" fill="white" rx="4" stroke="#e5e7eb"/><text x="295" y="119" fill="#0f2942" font-family="Outfit, Arial" font-size="10">Security Zones: Monitored</text><rect x="0" y="140" width="450" height="55" fill="#f8f9fa" rx="8"/><text x="15" y="162" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Operations</text><text x="15" y="182" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Origin: Port Harcourt production sites</text><text x="260" y="182" fill="#6b7280" font-family="Outfit, Arial" font-size="9">Destination: Northern blending plants</text></svg></div></div></div>
+            </div>
+
+            <!-- CASE STUDY 4: MANCHESTER -->
+            <div class="case-study">
+                <div class="case-study-content">
+                    <h3>Multi-City Urban Planning Analysis</h3>
                     <div class="case-study-meta"><span class="meta-tag">7 African Cities</span><span class="meta-tag">University of Manchester</span><span class="meta-tag">Research Collaboration</span></div>
-                    <p>Collaborated on a comprehensive analysis of urban planning documents across seven African cities: Cairo, Kampala, Lilongwe, Maputo, Mogadishu, Freetown, and Lagos. The project assessed which planning considerations had been properly addressed and which had been overlooked.</p>
-                    <p>Developed analytical frameworks connecting historical planning decisions to current urban conditions, producing insights applicable to emerging city development initiatives.</p>
+                    <p>Contributed to a University of Manchester research collaboration analyzing urban development plans across seven African cities: Cairo, Kampala, Lilongwe, Maputo, Mogadishu, Freetown, and Lagos.</p>
+                    <p>Coded city planning documents against a structured analytical framework, assessing how well each plan addressed governance, infrastructure, trade, climate resilience, migration, and alignment with global development agendas such as the SDGs. The work connected historical planning decisions to present-day urban conditions.</p>
                     <div class="case-study-metrics">
                         <div class="metric-card"><div class="metric-value">7</div><div class="metric-label">Cities Analyzed</div></div>
-                        <div class="metric-card"><div class="metric-value">50+</div><div class="metric-label">Documents Reviewed</div></div>
-                        <div class="metric-card"><div class="metric-value">12</div><div class="metric-label">Key Indicators</div></div>
-                        <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Research Outputs</div></div>
+                        <div class="metric-card"><div class="metric-value">80+</div><div class="metric-label">Variables Coded</div></div>
                     </div>
                 </div>
-                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Urban Planning Analysis</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="450" height="95" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Planning Standards Compliance by City</text><text x="60" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Cairo</text><text x="105" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Kampala</text><text x="155" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Lilongwe</text><text x="210" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Maputo</text><text x="260" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Mogadishu</text><text x="320" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Freetown</text><text x="380" y="40" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Lagos</text><rect x="55" y="48" width="30" height="14" fill="#28ca42" rx="2"/><rect x="100" y="48" width="30" height="14" fill="#7dd87d" rx="2"/><rect x="150" y="48" width="30" height="14" fill="#28ca42" rx="2"/><rect x="205" y="48" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="260" y="48" width="30" height="14" fill="#ff6b6b" rx="2"/><rect x="315" y="48" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="375" y="48" width="30" height="14" fill="#28ca42" rx="2"/><rect x="55" y="66" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="100" y="66" width="30" height="14" fill="#ff6b6b" rx="2"/><rect x="150" y="66" width="30" height="14" fill="#7dd87d" rx="2"/><rect x="205" y="66" width="30" height="14" fill="#28ca42" rx="2"/><rect x="260" y="66" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="315" y="66" width="30" height="14" fill="#7dd87d" rx="2"/><rect x="375" y="66" width="30" height="14" fill="#ffd93d" rx="2"/><rect x="0" y="105" width="450" height="90" fill="#f8f9fa" rx="8"/><text x="15" y="127" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Gap Analysis by Category</text><text x="90" y="150" fill="#6b7280" font-family="Outfit, Arial" font-size="9" text-anchor="end">Infrastructure</text><rect x="100" y="140" width="200" height="14" fill="#e5e7eb" rx="3"/><rect x="100" y="140" width="170" height="14" fill="#28ca42" rx="3"/><text x="310" y="151" fill="#6b7280" font-family="Outfit, Arial" font-size="9">85%</text><text x="90" y="175" fill="#6b7280" font-family="Outfit, Arial" font-size="9" text-anchor="end">Environment</text><rect x="100" y="165" width="200" height="14" fill="#e5e7eb" rx="3"/><rect x="100" y="165" width="140" height="14" fill="#c9a227" rx="3"/><text x="310" y="176" fill="#6b7280" font-family="Outfit, Arial" font-size="9">70%</text></svg></div></div></div>
+                <div class="case-study-visual"><div class="dashboard-mockup"><div class="dashboard-header"><span class="dashboard-dot red"></span><span class="dashboard-dot yellow"></span><span class="dashboard-dot green"></span><span class="dashboard-title">Urban Planning Analysis Framework</span></div><div class="dashboard-body"><svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="450" height="95" fill="#f8f9fa" rx="8"/><text x="15" y="22" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Document Coding by City</text><text x="40" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Cairo</text><text x="95" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Kampala</text><text x="155" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Lilongwe</text><text x="218" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Maputo</text><text x="270" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Mogadishu</text><text x="340" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Freetown</text><text x="405" y="42" fill="#6b7280" font-family="Outfit, Arial" font-size="7">Lagos</text><rect x="40" y="50" width="35" height="12" fill="#28ca42" rx="2"/><rect x="95" y="50" width="35" height="12" fill="#7dd87d" rx="2"/><rect x="160" y="50" width="35" height="12" fill="#28ca42" rx="2"/><rect x="220" y="50" width="35" height="12" fill="#ffd93d" rx="2"/><rect x="280" y="50" width="35" height="12" fill="#ff6b6b" rx="2"/><rect x="340" y="50" width="35" height="12" fill="#ffd93d" rx="2"/><rect x="405" y="50" width="35" height="12" fill="#28ca42" rx="2"/><rect x="40" y="68" width="35" height="12" fill="#ffd93d" rx="2"/><rect x="95" y="68" width="35" height="12" fill="#ff6b6b" rx="2"/><rect x="160" y="68" width="35" height="12" fill="#7dd87d" rx="2"/><rect x="220" y="68" width="35" height="12" fill="#28ca42" rx="2"/><rect x="280" y="68" width="35" height="12" fill="#ffd93d" rx="2"/><rect x="340" y="68" width="35" height="12" fill="#7dd87d" rx="2"/><rect x="405" y="68" width="35" height="12" fill="#ffd93d" rx="2"/><rect x="0" y="105" width="450" height="90" fill="#f8f9fa" rx="8"/><text x="15" y="127" fill="#0f2942" font-family="Outfit, Arial" font-size="11" font-weight="bold">Variables Assessed</text><text x="15" y="150" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Governance &amp; Institutional Capacity</text><text x="15" y="168" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Infrastructure &amp; Public Services</text><text x="15" y="186" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Trade &amp; Economic Strategy</text><text x="240" y="150" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Climate Resilience</text><text x="240" y="168" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; Migration &amp; Demographics</text><text x="240" y="186" fill="#6b7280" font-family="Outfit, Arial" font-size="9">&#9679; SDG Alignment</text></svg></div></div></div>
             </div>
         </div>
     </section>
@@ -265,25 +242,31 @@
             <div class="section-header"><span class="section-label">Published Work</span><h2 class="section-title">Publications</h2><p class="section-subtitle">Translating complexity into clarity across economics, culture, and institutional analysis.</p></div>
             <div class="pub-grid">
                 <div class="pub-card">
-                    <span class="pub-status published">Published 2025</span>
+                    <span class="pub-status published">Published 2026</span>
                     <h3>The Precious Pearl</h3>
                     <div class="pub-subtitle">Aphorisms of Ancient Arab Wisdom &middot; With Commentary</div>
                     <p>A translated and annotated collection of over 300 classical Arabic aphorisms originally compiled by Sheikh Muhammad Rabiu Adebayo. This work preserves a family scholarly legacy while making centuries-old wisdom on character, knowledge, patience, and governance accessible to contemporary English-language readers.</p>
-                    <div class="pub-meta">Translator and Annotator &ensp;|&ensp; Available on Amazon Kindle &ensp;|&ensp; 350+ pages</div>
+                    <div class="pub-meta">Translator and Annotator &ensp;|&ensp; <a href="https://a.co/d/00tkVBjr" target="_blank" style="color:var(--accent); text-decoration:none;">Available on Amazon</a> &ensp;|&ensp; 350+ pages</div>
                 </div>
-
+                <div class="pub-card">
+                    <span class="pub-status published">Published 2026</span>
+                    <h3>The Woman Who Sold Futures</h3>
+                    <div class="pub-subtitle">Short Stories</div>
+                    <p>Nine short stories about women whose intelligence lives outside the places the world is trained to look for it, working quietly inside lives the systems never thought to measure.</p>
+                    <div class="pub-meta">Author &ensp;|&ensp; <a href="https://a.co/d/0eXQ0CY4" target="_blank" style="color:var(--accent); text-decoration:none;">Available on Amazon</a></div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="skills-section" id="skills">
         <div class="container">
-            <div class="section-header"><span class="section-label">Expertise</span><h2 class="section-title">Technical Competencies</h2><p class="section-subtitle">A comprehensive toolkit for delivering complex programs at scale.</p></div>
+            <div class="section-header"><span class="section-label">Expertise</span><h2 class="section-title">Technical Competencies</h2><p class="section-subtitle">A comprehensive toolkit built across technology, operations, and development.</p></div>
             <div class="skills-grid">
                 <div class="skill-category"><div class="skill-icon">&#128203;</div><h4>Program Management</h4><ul class="skill-list"><li>Portfolio Management</li><li>Agile / Scrum / SAFe</li><li>Risk &amp; Dependency Management</li><li>Budget Ownership</li><li>Strategic Planning</li><li>M&amp;E Frameworks</li></ul></div>
-                <div class="skill-category"><div class="skill-icon">&#128736;&#65039;</div><h4>Project Tools</h4><ul class="skill-list"><li>JIRA &amp; Confluence</li><li>Asana</li><li>Smartsheet</li><li>MS Project</li><li>Trello</li></ul></div>
-                <div class="skill-category"><div class="skill-icon">&#128202;</div><h4>Data &amp; Analytics</h4><ul class="skill-list"><li>Power BI &amp; Tableau</li><li>SQL</li><li>Excel (Advanced)</li><li>Python &amp; Stata</li><li>NVivo</li><li>Dashboard Design</li></ul></div>
-                <div class="skill-category"><div class="skill-icon">&#9729;&#65039;</div><h4>Cloud &amp; AI</h4><ul class="skill-list"><li>AWS (EC2, S3, Lambda)</li><li>Generative AI Tools</li><li>Prompt Engineering</li><li>AI Content Workflows</li><li>Process Automation</li></ul></div>
+                <div class="skill-category"><div class="skill-icon">&#128736;&#65039;</div><h4>Project Tools</h4><ul class="skill-list"><li>JIRA</li><li>Asana</li><li>Smartsheet</li><li>MS Project</li><li>Trello</li></ul></div>
+                <div class="skill-category"><div class="skill-icon">&#128202;</div><h4>Data &amp; Analytics</h4><ul class="skill-list"><li>Power BI</li><li>SQL</li><li>Excel (Advanced)</li><li>Stata</li><li>NVivo</li><li>Dashboard Design</li></ul></div>
+                <div class="skill-category"><div class="skill-icon">&#9729;&#65039;</div><h4>Cloud &amp; AI</h4><ul class="skill-list"><li>AWS (EC2, S3, Lambda)</li><li>Generative AI Tools</li><li>Prompt Engineering</li><li>AI Model Evaluation &amp; Rubric Design</li><li>Process Automation</li></ul></div>
             </div>
         </div>
     </section>
@@ -296,7 +279,7 @@
                 <div class="cert-card"><div class="cert-logo">ACP</div><div class="cert-name">PMI-ACP&#174;</div><div class="cert-issuer">Project Management Institute</div></div>
                 <div class="cert-card"><div class="cert-logo">AWS</div><div class="cert-name">Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div></div>
                 <div class="cert-card"><div class="cert-logo">AI</div><div class="cert-name">Gen AI for PM</div><div class="cert-issuer">Project Management Institute</div></div>
-                <div class="cert-card"><div class="cert-logo">W</div><div class="cert-name">Strategic Management</div><div class="cert-issuer">Wharton Business School</div></div>
+                <div class="cert-card"><div class="cert-logo">W</div><div class="cert-name">Strategic Management</div><div class="cert-issuer">The Wharton School</div></div>
             </div>
         </div>
     </section>
@@ -305,7 +288,7 @@
         <div class="container">
             <div class="section-header"><span class="section-label">Academic Background</span><h2 class="section-title">Education</h2><p class="section-subtitle">A foundation of rigorous academic training across four degrees and three countries.</p></div>
             <div class="education-grid">
-                <div class="edu-card"><div class="edu-degree">PhD, Development Economics</div><div class="edu-school">University of East Anglia</div><div class="edu-details">United Kingdom | 2025</div></div>
+                <div class="edu-card"><div class="edu-degree">PhD, International Development &amp; Political Economy</div><div class="edu-school">University of East Anglia</div><div class="edu-details">United Kingdom | 2025</div></div>
                 <div class="edu-card"><div class="edu-degree">MA, Global Affairs &amp; Human Security</div><div class="edu-school">University of Baltimore</div><div class="edu-details">USA | GPA: 3.97/4.0</div></div>
                 <div class="edu-card"><div class="edu-degree">MSc, Agricultural Extension</div><div class="edu-school">University of Ilorin</div><div class="edu-details">Nigeria | Distinction</div></div>
                 <div class="edu-card"><div class="edu-degree">BSc, Agriculture (Honours)</div><div class="edu-school">University of Ilorin</div><div class="edu-details">Nigeria</div></div>
@@ -315,7 +298,7 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header"><span class="section-label" style="background: rgba(255,255,255,0.15); color: white;">Get in Touch</span><h2 class="section-title">Let's Connect</h2><p class="section-subtitle" style="color: rgba(255,255,255,0.6);">Open to program management, strategy, and operations opportunities in technology, international development, and innovation.</p></div>
+            <div class="section-header"><span class="section-label" style="background: rgba(255,255,255,0.15); color: white;">Get in Touch</span><h2 class="section-title">Let's Connect</h2><p class="section-subtitle" style="color: rgba(255,255,255,0.6);">Open to program strategy, evaluation, and operations roles across technology, international development, and innovation.</p></div>
             <div class="contact-info">
                 <div class="contact-item"><div class="contact-icon">&#9993;&#65039;</div><a href="mailto:nafeezie@gmail.com">nafeezie@gmail.com</a></div>
                 <div class="contact-item"><div class="contact-icon">&#128241;</div><span>+1 702-573-0977</span></div>
@@ -325,7 +308,7 @@
         </div>
     </section>
 
-    <footer><p>&copy; 2025 Nafeesat Rabiu-Adebayo. All rights reserved.</p></footer>
+    <footer><p>&copy; 2026 Nafeesat Rabiu-Adebayo. All rights reserved.</p></footer>
 
     <script>
         document.querySelectorAll('nav a[href^="#"]').forEach(a => {
@@ -334,7 +317,6 @@
                 document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
-        // Scroll-triggered fade-in for case studies and publication cards
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
