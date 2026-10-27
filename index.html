@@ -191,6 +191,48 @@
   }
   .gate p{font-size:15.5px;line-height:1.55;color:#C6BCAB;margin:0;max-width:none;}
 
+  /* ---------- CORRIDOR MAP ---------- */
+  .corr{margin-top:60px;padding-top:34px;border-top:1px solid #3A332B;}
+  .corr-head{
+    font-family:"EB Garamond",system-ui,sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:38px;
+  }
+  .corr-track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;}
+  .corr-track::before{
+    content:"";position:absolute;top:5px;left:16.6%;right:16.6%;height:1px;
+    background:rgba(195,154,74,.5);
+  }
+  .cnode{text-align:center;}
+  .cnode .cdot{
+    display:block;position:relative;z-index:1;width:11px;height:11px;border-radius:50%;
+    background:var(--gold-bright);box-shadow:0 0 0 5px rgba(195,154,74,.13);margin:0 auto 22px;
+  }
+  .cnode h4{
+    font-family:"EB Garamond",serif;font-size:25px;font-weight:500;color:var(--paper);
+    margin:0 0 7px;letter-spacing:-.01em;
+  }
+  .cnode p{font-size:15px;line-height:1.5;color:#A89E8E;margin:0;max-width:34ch;margin-inline:auto;}
+  .corr-foot{
+    font-size:16px;line-height:1.6;color:#C6BCAB;max-width:66ch;
+    margin:36px 0 0;padding-top:0;
+  }
+
+  /* ---------- FIELD PHOTOGRAPHS ---------- */
+  .field{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .field-head{margin-bottom:40px;max-width:60ch;}
+  .field-head h2{font-size:clamp(28px,3.8vw,42px);margin-top:16px;}
+  .field-head h2 em{font-style:italic;color:var(--gold);}
+  .field-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .field figure{margin:0;}
+  .field figure img{
+    display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .field figcaption{
+    font-size:15px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;
+    border-top:1px solid var(--line);
+  }
+
   /* ---------- SECTIONS ---------- */
   section{padding:92px 0;}
   .sec-head{max-width:62ch;margin-bottom:50px;}
@@ -396,6 +438,7 @@
     .svc-grid{grid-template-columns:1fr;}
     .gates-row{grid-template-columns:1fr 1fr;}
     .gates-ends{flex-direction:column;gap:4px;}
+    .field-grid{grid-template-columns:1fr;gap:34px;}
     .work-item{grid-template-columns:1fr;gap:8px;}
     .work-item .wdesc{grid-column:1;}
     .work-item .wmeta{text-align:left;}
@@ -416,6 +459,13 @@
     .form-row{grid-template-columns:1fr;gap:0;}
     .gates-row{grid-template-columns:1fr;}
     .gates{margin-top:48px;}
+    .corr{margin-top:48px;}
+    .corr-track{grid-template-columns:1fr;gap:0;}
+    .corr-track::before{top:6px;bottom:26px;left:5px;right:auto;width:1px;height:auto;}
+    .cnode{text-align:left;padding:0 0 28px 32px;position:relative;}
+    .cnode:last-child{padding-bottom:0;}
+    .cnode .cdot{position:absolute;left:0;top:6px;margin:0;}
+    .cnode p{max-width:none;margin-inline:0;}
     .btn{width:100%;justify-content:center;}
   }
   @media(prefers-reduced-motion:reduce){
@@ -498,6 +548,28 @@
         <p>The world already grows enough food, and it already knows how to farm. Hunger and rural poverty survive somewhere quieter, in the last mile between what institutions produce and what actually reaches the farmer. That distance is where food security is decided, and few people have worked it from every side. I have trained smallholder farmers as an extension officer, moved fertilizer at national scale, built technology meant to cross the gap, and evaluated the aid designed to close it.</p>
         <p>My doctoral research named one version of the problem. Aid can lift a country's exports while quietly raising the cost of trading, so the gains register at the institution and are absorbed before they reach the people who grew the goods. Who captures that value, and why, is a question of politics and institutions rather than agronomy. The pattern repeats wherever food moves, and the work, every time, is to close the distance.</p>
       </div>
+    </div>
+
+    <div class="corr reveal">
+      <div class="corr-head">The corridor my doctoral research followed</div>
+      <div class="corr-track">
+        <div class="cnode">
+          <span class="cdot" aria-hidden="true"></span>
+          <h4>Lagos</h4>
+          <p>The Atlantic ports, where imported inputs arrive and exports leave</p>
+        </div>
+        <div class="cnode">
+          <span class="cdot" aria-hidden="true"></span>
+          <h4>Kano</h4>
+          <p>The northern commercial hub, where produce is aggregated and traded</p>
+        </div>
+        <div class="cnode">
+          <span class="cdot" aria-hidden="true"></span>
+          <h4>Jibiya</h4>
+          <p>The crossing into Niger Republic, where formal and informal trade meet</p>
+        </div>
+      </div>
+      <p class="corr-foot">Aid enters this route at one end and farms sit along the whole of it. What moving goods costs, and who collects those costs on the way, decides how much of the support survives the journey.</p>
     </div>
 
     <div class="gates reveal">
@@ -701,6 +773,29 @@
         <div><h3>The Aid-for-Trade Paradox</h3><div class="wdesc">I built an original dataset from scratch and combined Theory of Change evaluation with corridor analysis, evidencing a paradox in aid policy. Aid can improve export performance while raising trade costs, as governance and informal costs absorb the gains along the way.</div></div>
         <div class="wmeta">University of East Anglia · School of Global Development · 2025</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="field" id="field">
+  <div class="wrap">
+    <div class="field-head reveal">
+      <div class="eyebrow">In the Field</div>
+      <h2>Where the <em>work</em> happens.</h2>
+    </div>
+    <div class="field-grid">
+      <figure class="reveal">
+        <img src="img/workshop.jpg" alt="Nafeesat Rabiu-Adebayo at a whiteboard covered in sticky notes during a digital transformation workshop." width="1100" height="825" loading="lazy" decoding="async">
+        <figcaption>Mapping requirements for the digital agriculture platform. Agritech transformation workshop at OCP Africa.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="img/outreach-1.jpg" alt="Nafeesat Rabiu-Adebayo seated with a group of smallholder farmers during an extension visit." width="1100" height="825" loading="lazy" decoding="async">
+        <figcaption>Extension work with smallholder farmers, which is where all of this started.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="img/outreach-2.jpg" alt="Nafeesat Rabiu-Adebayo holding a notebook while talking with farmers alongside a colleague." width="1100" height="825" loading="lazy" decoding="async">
+        <figcaption>Field notes from the same outreach. Most of what I know about programme design came out of conversations like these.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
