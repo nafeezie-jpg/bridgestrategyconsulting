@@ -247,6 +247,8 @@ section[id]{scroll-margin-top:76px}
 .direct{margin-top:30px;display:grid;gap:12px}
 .direct a{display:inline-flex;align-items:center;gap:12px;color:var(--on-dark);text-decoration:none;font-weight:500}
 .direct a:hover{color:var(--gold)}
+.direct .copy{justify-self:start;background:none;border:1px solid rgba(244,239,228,.35);border-radius:2px;color:var(--on-dark-2);font:500 16px var(--serif);padding:4px 12px;cursor:pointer;margin:-4px 0 4px 30px}
+.direct .copy:hover{border-color:var(--gold);color:var(--gold)}
 .direct svg{width:18px;height:18px;fill:var(--gold);flex:none}
 form{background:var(--paper);color:var(--body);border-radius:4px;padding:32px 30px}
 .field{margin-bottom:16px}
@@ -506,17 +508,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     </article>
 
     <article class="case">
-      <div class="yrs">2018 to 2019<small>OCP Africa with IBM<br>Abuja, Nigeria</small></div>
+      <div class="yrs">2018 to 2019<small>Agribusiness and technology partnership<br>Nigeria</small></div>
       <div>
         <h3>A digital agriculture platform, from workshop to prototype</h3>
         <div class="case-body">
           <div>
-            <p>As business analyst and then product owner, I shaped a platform with IBM covering farm inputs, market access, finance, and agronomic advice. I ran design-thinking workshops with farmers, extension agents, and officials, turned what they told me into requirements, and presented the working prototype to senior government.</p>
-            <p>I also supported the Agribooster bundled-input program, which delivered subsidized seed, fertilizer, and insecticide through one-stop shops across Bauchi, Kaduna, Kano, and other states.</p>
+            <p>As business analyst and then product owner, I shaped a platform with a global technology partner covering farm inputs, market access, finance, and agronomic advice. I ran design-thinking workshops with farmers, extension agents, and officials, turned what they told me into requirements, and presented the working prototype to senior government.</p>
+            <p>I also supported a bundled-input program which delivered subsidized seed, fertilizer, and insecticide through one-stop shops across Bauchi, Kaduna, Kano, and other states.</p>
           </div>
           <ul class="facts">
             <li><b>30%</b>less time spent on reporting, through new status reports and executive dashboards</li>
-            <li><b>5+ states</b>reached by the Agribooster program, serving thousands of farmers</li>
+            <li><b>5+ states</b>reached by the bundled-input program, serving thousands of farmers</li>
             <li style="padding:0;border:0;background:none"><figure class="case-photo"><img src="img/workshop.jpg" alt="Nafeesat Rabiu-Adebayo at a whiteboard covered in sticky notes during a stakeholder workshop." width="1100" height="825" loading="lazy"></figure></li>
           </ul>
         </div>
@@ -524,7 +526,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     </article>
 
     <article class="case">
-      <div class="yrs">2017 to 2018<small>Presidential Fertilizer Initiative<br>TAK Logistics, Nigeria</small></div>
+      <div class="yrs">2017 to 2018<small>National fertilizer program<br>Nigeria</small></div>
       <div>
         <h3>Moving fertilizer at national scale</h3>
         <div class="case-body">
@@ -541,7 +543,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     </article>
 
     <article class="case">
-      <div class="yrs">2014 to 2017<small>Kwara State Ministry of Agriculture<br>Nigeria</small></div>
+      <div class="yrs">2014 to 2017<small>State agricultural extension service<br>Nigeria</small></div>
       <div>
         <h3>Extension work with smallholder farmers</h3>
         <div class="case-body">
@@ -574,9 +576,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="wrap" style="margin-top:64px">
     <h3 style="font-size:clamp(26px,2.6vw,34px);margin-bottom:34px">The path so far</h3>
     <ol class="tl">
-      <li><div class="when">2014 to 2017</div><b>Extension officer</b><span>Kwara State Ministry of Agriculture</span></li>
-      <li><div class="when">2017 to 2018</div><b>Logistics supervisor</b><span>Presidential Fertilizer Initiative</span></li>
-      <li><div class="when">2018 to 2019</div><b>Product owner</b><span>OCP Africa and IBM digital agriculture</span></li>
+      <li><div class="when">2014 to 2017</div><b>Extension officer</b><span>State extension service, Nigeria</span></li>
+      <li><div class="when">2017 to 2018</div><b>Logistics supervisor</b><span>National fertilizer program, Nigeria</span></li>
+      <li><div class="when">2018 to 2019</div><b>Product owner</b><span>Digital agriculture platform, Nigeria</span></li>
       <li><div class="when">2019 to 2022</div><b>MA and fellowships</b><span>University of Baltimore, UN Association, Washington DC</span></li>
       <li><div class="when">2022 to 2025</div><b>PhD</b><span>University of East Anglia, with University of Manchester research across seven African cities</span></li>
       <li><div class="when">2025 to now</div><b>Founder</b><span>Bridge Strategy Consulting</span></li>
@@ -702,7 +704,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <h2>Let's close the distance</h2>
       <p class="intro">Tell me about the assignment, where it stands, and what you would like a second pair of eyes on. I read every enquiry myself.</p>
       <div class="direct">
-        <a href="mailto:nra@bridgestrategyconsulting.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 4.76-8-4.76V6l8 4.76L20 6z"/></svg>nra@bridgestrategyconsulting.com</a>
+        <a id="mailLink" href="mailto:nra@bridgestrategyconsulting.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 4.76-8-4.76V6l8 4.76L20 6z"/></svg>nra@bridgestrategyconsulting.com</a>
+        <button type="button" class="copy" id="copyMail">Copy email address</button>
         <a href="tel:+17025730977"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>+1 702 573 0977</a>
         <a href="https://www.linkedin.com/in/nafeesat-rabiu-adebayo-phd-28a08a107/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.13 1.45-2.13 2.9V21h-4z"/></svg>Connect on LinkedIn</a>
       </div>
@@ -768,6 +771,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 </script>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var MAIL = 'nra@bridgestrategyconsulting.com', link = document.getElementById('mailLink'), btn = document.getElementById('copyMail');
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if(!phone){ link.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(MAIL); }
+  else { link.removeAttribute('target'); }
+  btn.addEventListener('click', function(){
+    var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy email address'; }, 2000); };
+    if(navigator.clipboard){ navigator.clipboard.writeText(MAIL).then(done, function(){ prompt('Copy this email address', MAIL); }); }
+    else { prompt('Copy this email address', MAIL); }
+  });
+})();
 (function(){
   var btn = document.getElementById('menuBtn'), panel = document.getElementById('navPanel');
   btn.addEventListener('click', function(){ var open = panel.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.textContent = open ? 'Close' : 'Menu'; });
