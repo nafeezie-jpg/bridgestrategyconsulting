@@ -167,6 +167,30 @@
   .idea-grid .lead{font-family:"EB Garamond",serif;font-size:clamp(21px,2.8vw,28px);line-height:1.38;color:var(--paper);font-weight:400;}
   .idea-grid .lead em{font-style:italic;color:var(--gold-bright);}
 
+  /* ---------- GATES DIAGRAM ---------- */
+  .gates{margin-top:66px;}
+  .gates-head{
+    font-family:"EB Garamond",system-ui,sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright);
+    padding-bottom:20px;border-bottom:1px solid #3A332B;
+  }
+  .gates-ends{
+    display:flex;justify-content:space-between;gap:16px;
+    font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A8174;
+    padding:14px 0 26px;
+  }
+  .gates-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#3A332B;}
+  .gate{background:var(--ink);padding:26px 22px 28px;}
+  .gnum{
+    font-family:"EB Garamond",system-ui,sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;color:var(--gold-bright);
+  }
+  .gate h4{
+    font-family:"EB Garamond",serif;font-size:24px;font-weight:500;
+    color:var(--paper);margin:11px 0 9px;letter-spacing:-.01em;
+  }
+  .gate p{font-size:15.5px;line-height:1.55;color:#C6BCAB;margin:0;max-width:none;}
+
   /* ---------- SECTIONS ---------- */
   section{padding:92px 0;}
   .sec-head{max-width:62ch;margin-bottom:50px;}
@@ -185,7 +209,21 @@
   .svc-cell.dark .svc-for{color:#A79C8B;}
   .svc-msg{font-size:16.5px;color:var(--ink-soft);margin:0 0 18px;}
   .svc-cell.dark .svc-msg{color:#D8D0C2;}
-  .svc-deliv{list-style:none;margin:0 0 20px;padding:0;}
+  .svc-fold{margin:0 0 20px;}
+  .svc-fold summary{
+    list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+    font-family:"EB Garamond",system-ui,sans-serif;font-size:12.5px;letter-spacing:.1em;
+    text-transform:uppercase;font-weight:600;color:var(--muted);
+    padding-bottom:3px;border-bottom:1px solid var(--line);transition:color .2s,border-color .2s;
+  }
+  .svc-fold summary::-webkit-details-marker{display:none;}
+  .svc-fold summary::after{content:"+";font-size:15px;line-height:1;color:var(--gold-text);}
+  .svc-fold[open] summary::after{content:"\2013";}
+  .svc-fold summary:hover{color:var(--ink);border-color:var(--gold);}
+  .svc-cell.dark .svc-fold summary{color:#A79C8B;border-color:#413A31;}
+  .svc-cell.dark .svc-fold summary::after{color:var(--gold-bright);}
+  .svc-cell.dark .svc-fold summary:hover{color:var(--paper);border-color:var(--gold-bright);}
+  .svc-deliv{list-style:none;margin:14px 0 0;padding:0;}
   .svc-deliv li{
     position:relative;padding-left:17px;font-size:15px;line-height:1.55;
     color:var(--muted);margin-bottom:6px;
@@ -356,6 +394,8 @@
     .ideas-grid{grid-template-columns:1fr;}
     .rec-grid{grid-template-columns:1fr;gap:38px;}
     .svc-grid{grid-template-columns:1fr;}
+    .gates-row{grid-template-columns:1fr 1fr;}
+    .gates-ends{flex-direction:column;gap:4px;}
     .work-item{grid-template-columns:1fr;gap:8px;}
     .work-item .wdesc{grid-column:1;}
     .work-item .wmeta{text-align:left;}
@@ -374,6 +414,8 @@
     .data .wrap{grid-template-columns:1fr 1fr;}
     .svc-cell{padding:30px 24px;}
     .form-row{grid-template-columns:1fr;gap:0;}
+    .gates-row{grid-template-columns:1fr;}
+    .gates{margin-top:48px;}
     .btn{width:100%;justify-content:center;}
   }
   @media(prefers-reduced-motion:reduce){
@@ -457,6 +499,36 @@
         <p>My doctoral research named one version of the problem. Aid can lift a country's exports while quietly raising the cost of trading, so the gains register at the institution and are absorbed before they reach the people who grew the goods. Who captures that value, and why, is a question of politics and institutions rather than agronomy. The pattern repeats wherever food moves, and the work, every time, is to close the distance.</p>
       </div>
     </div>
+
+    <div class="gates reveal">
+      <div class="gates-head">Four places a programme breaks on the way down</div>
+      <div class="gates-ends">
+        <span>From the institution</span>
+        <span>To the household</span>
+      </div>
+      <div class="gates-row">
+        <div class="gate">
+          <div class="gnum">01</div>
+          <h4>Timing</h4>
+          <p>Does the input arrive before the planting window closes? A season missed is a year lost, and no amount of design corrects it afterwards.</p>
+        </div>
+        <div class="gate">
+          <div class="gnum">02</div>
+          <h4>Reach</h4>
+          <p>Who carries it the final stretch, over which road, in whose vehicle? This is where most delivery plans quietly stop being true.</p>
+        </div>
+        <div class="gate">
+          <div class="gnum">03</div>
+          <h4>Cost</h4>
+          <p>Who captures the margin between the farmgate and the market, and which of those costs were made by policy rather than geography?</p>
+        </div>
+        <div class="gate">
+          <div class="gnum">04</div>
+          <h4>Capability</h4>
+          <p>Is anyone there to advise the farmer when it lands? An input without advice is a cost the household absorbs alone.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -475,6 +547,7 @@
         <h3>Agricultural Programme Design &amp; Strategy</h3>
         <p class="svc-for">For organizations planning agricultural development, farmer support, food security, or rural livelihood interventions.</p>
         <p class="svc-msg">Build programmes that account for the realities of implementation before resources are committed.</p>
+        <details class="svc-fold"><summary>What this includes</summary>
         <ul class="svc-deliv">
           <li>Programme concept notes and design documents</li>
           <li>Theory of change development</li>
@@ -483,6 +556,7 @@
           <li>Feasibility and delivery assessments</li>
           <li>Agricultural policy and programme advisory</li>
         </ul>
+      </details>
         <a class="svc-link" href="#contact" data-prefill="Agricultural programme design and strategy">Discuss a design brief</a>
       </div>
 
@@ -491,6 +565,7 @@
         <h3>Monitoring, Evaluation &amp; Learning</h3>
         <p class="svc-for">For organizations that need credible evidence of programme performance and outcomes.</p>
         <p class="svc-msg">Understand what your programme is achieving, where implementation is falling short, and what needs to change.</p>
+        <details class="svc-fold"><summary>What this includes</summary>
         <ul class="svc-deliv">
           <li>Monitoring and evaluation frameworks</li>
           <li>Results frameworks and performance indicators</li>
@@ -500,6 +575,7 @@
           <li>Mixed-methods research and analysis</li>
           <li>Learning reports and recommendations</li>
         </ul>
+      </details>
         <a class="svc-link" href="#contact" data-prefill="Monitoring, evaluation and learning">Discuss an evaluation</a>
       </div>
 
@@ -508,6 +584,7 @@
         <h3>Agricultural Policy, Trade &amp; Institutional Analysis</h3>
         <p class="svc-for">For organizations requiring specialized research into the policies, institutions, and economic conditions shaping agricultural development.</p>
         <p class="svc-msg">Make better decisions with research that connects policy intentions to institutional and market realities.</p>
+        <details class="svc-fold"><summary>What this includes</summary>
         <ul class="svc-deliv">
           <li>Agricultural policy reviews</li>
           <li>Trade and market-access analysis</li>
@@ -516,6 +593,7 @@
           <li>Political economy research</li>
           <li>Policy briefs and analytical reports</li>
         </ul>
+      </details>
         <a class="svc-link" href="#contact" data-prefill="Agricultural policy, trade and institutional analysis">Discuss a research question</a>
       </div>
 
@@ -524,6 +602,7 @@
         <h3>Technical Research &amp; Proposal Partnerships</h3>
         <p class="svc-for">For consulting firms, development organizations, and research teams preparing proposals or delivering funded assignments.</p>
         <p class="svc-msg">Bring credible technical expertise into your proposal or delivery team when you need it.</p>
+        <details class="svc-fold"><summary>What this includes</summary>
         <ul class="svc-deliv">
           <li>Technical contributions to funding proposals</li>
           <li>Research methodology development</li>
@@ -532,6 +611,7 @@
           <li>Evidence synthesis and literature reviews</li>
           <li>Technical report writing and specialist advisory</li>
         </ul>
+      </details>
         <a class="svc-link" href="#contact" data-prefill="Technical or proposal partnership">Add me to your team</a>
       </div>
 
@@ -598,27 +678,27 @@
     <div class="work-list">
       <div class="work-item reveal">
         <div class="wtag">Field</div>
-        <div><h3>Agricultural Extension, Kwara State</h3><div class="wdesc">I began in agricultural extension with the Kwara State Ministry of Agriculture, training hundreds of smallholder farmers through farm visits, field demonstrations, and advisory sessions built for the realities of rural communities. This is where the last mile stopped being an idea and became the work.</div></div>
+        <div><h3>Agricultural Extension, Kwara State</h3><div class="wdesc">Agricultural extension with the Kwara State Ministry of Agriculture, training hundreds of smallholder farmers through farm visits and field demonstrations. This is where the last mile stopped being an idea and became the work.</div></div>
         <div class="wmeta">Kwara State Ministry of Agriculture</div>
       </div>
       <div class="work-item reveal">
         <div class="wtag">Operations</div>
-        <div><h3>Presidential Fertilizer Initiative</h3><div class="wdesc">I supervised a team of ten managing the nationwide transport of urea fertilizer from Port Harcourt to blending plants across the north, running a real-time GPS control room and building incident-response protocols with security agencies and government parastatals under sustained pressure.</div></div>
+        <div><h3>Presidential Fertilizer Initiative</h3><div class="wdesc">A team of ten, moving urea fertilizer from Port Harcourt to blending plants across the north. I ran the real-time GPS control room and built the incident-response protocols the programme then adopted as standard.</div></div>
         <div class="wmeta">TAK Logistics · National</div>
       </div>
       <div class="work-item reveal">
         <div class="wtag">Product</div>
-        <div><h3>Digital Agriculture Platform</h3><div class="wdesc">I progressed from Business Analyst to Product Owner on an end-to-end digital agriculture platform built with IBM for OCP Africa, spanning farm inputs, market access, finance, advice, and farm management. I translated the needs of farmers, extension agents, and officials into product requirements, and presented the working prototype to senior government executives.</div></div>
+        <div><h3>Digital Agriculture Platform</h3><div class="wdesc">Business Analyst to Product Owner on a digital agriculture platform built with IBM for OCP Africa, covering inputs, market access, finance, and advice. I turned what farmers and officials told me into requirements, and presented the prototype to senior government.</div></div>
         <div class="wmeta">OCP Africa &amp; IBM · Abuja</div>
       </div>
       <div class="work-item reveal">
         <div class="wtag">Programs</div>
-        <div><h3>Agribooster Input Initiative</h3><div class="wdesc">I supported a bundled-input program delivering subsidized seeds, fertilizer, and insecticide to smallholders through one-stop shops staffed with extension agents across northern Nigeria, leading stakeholder engagement with state ministries, cooperatives, and suppliers and reaching thousands of farmers.</div></div>
+        <div><h3>Agribooster Input Initiative</h3><div class="wdesc">A bundled-input program delivering subsidized seeds, fertilizer, and insecticide to smallholders through one-stop shops across northern Nigeria. I led engagement with state ministries, cooperatives, and suppliers.</div></div>
         <div class="wmeta">OCP Africa · 5+ States</div>
       </div>
       <div class="work-item reveal">
         <div class="wtag">Research</div>
-        <div><h3>The Aid-for-Trade Paradox</h3><div class="wdesc">My doctoral research named and evidenced a paradox at the heart of aid policy, building an original dataset from scratch and combining a Theory of Change evaluation with trade-cost and corridor analysis. The finding was that aid can improve a country's export performance while raising its trade costs, as governance, informal costs, and institutional behaviour absorb the gains along the way. It carries direct implications for how development finance is targeted and measured.</div></div>
+        <div><h3>The Aid-for-Trade Paradox</h3><div class="wdesc">I built an original dataset from scratch and combined Theory of Change evaluation with corridor analysis, evidencing a paradox in aid policy. Aid can improve export performance while raising trade costs, as governance and informal costs absorb the gains along the way.</div></div>
         <div class="wmeta">University of East Anglia · School of Global Development · 2025</div>
       </div>
     </div>
